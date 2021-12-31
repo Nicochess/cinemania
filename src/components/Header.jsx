@@ -7,17 +7,17 @@ const Header = () => {
       <div className="container">
         <div className="inner-content">
           <div className="brand">
-            <Link to="/">Cinemania</Link>
+            <Link to="/personal-watch-list">Cinemania</Link>
           </div>
           <ul className="nav-links">
             <li>
-              <Link to="/">Para assistir</Link>
+              <Link to="/personal-watch-list">Para assistir</Link>
             </li>
             <li>
-              <Link to="/watched">Assistidos</Link>
+              <Link to="/personal-watch-list/watched">Assistidos</Link>
             </li>
             <li>
-              <Link to="/add" className="btn">
+              <Link to="/personal-watch-list/add" className="btn">
                 Procurar
               </Link>
             </li>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Card from "./Card";
+import Card from "../components/Card";
 
 const Add = () => {
   const [query, setQuery] = useState("");

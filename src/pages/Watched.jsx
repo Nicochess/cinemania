@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import GlobalContext from "../context/GlobalState";
-import MovieCard from "./MovieCard";
+import MovieCard from "../components/MovieCard";
 
 const Watched = () => {
   const globalContext = useContext(GlobalContext);
@@ -11,7 +11,7 @@ const Watched = () => {
         <div className="header">
           <h1 className="heading">Já assisti estes filmes</h1>
           <span className="count-pill">
-            {globalContext.watched.length} {globalContext.watched.length === 1 ? "Movie" : "Movies"}
+            {globalContext.watched.length} {globalContext.watched.length === 1 ? "Filme" : "Filmes"}
           </span>
         </div>
         {globalContext.watched.length > 0 ? (
