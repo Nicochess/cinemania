@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Card from "./Card";
 
 const Add = () => {
   const [query, setQuery] = useState("");
@@ -35,7 +36,11 @@ const Add = () => {
           {results.length > 0 && (
             <ul className="results">
               {results.map((movie) => {
-                return <li>{movie.title}</li>;
+                return (
+                  <li key={movie.id}>
+                    <Card movie={movie} />
+                  </li>
+                );
               })}
             </ul>
           )}
