@@ -252,6 +252,7 @@ header .nav-links li {
 }
 
 .movie-card:hover .inner-card-controls {
+  z-index: 1;
   opacity: 1;
 }
 
@@ -287,6 +288,7 @@ header .nav-links li {
   border-radius: 5px;
   padding: 3px;
   opacity: 0;
+  z-index: -1;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
