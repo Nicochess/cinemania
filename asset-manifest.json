@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/personal-watch-list/static/css/main.7be20927.css",
+    "main.js": "/personal-watch-list/static/js/main.bca5db30.js",
+    "static/js/787.4be3b466.chunk.js": "/personal-watch-list/static/js/787.4be3b466.chunk.js",
+    "static/media/fa-solid-900.svg": "/personal-watch-list/static/media/fa-solid-900.18df003f90a7f1313b98.svg",
+    "static/media/fa-brands-400.svg": "/personal-watch-list/static/media/fa-brands-400.3c45c98f6f6c1b009c08.svg",
+    "static/media/fa-solid-900.eot": "/personal-watch-list/static/media/fa-solid-900.7eefe04dc985dd4ad38b.eot",
+    "static/media/fa-solid-900.ttf": "/personal-watch-list/static/media/fa-solid-900.32267f3b4db33a7c85ee.ttf",
+    "static/media/fa-regular-400.svg": "/personal-watch-list/static/media/fa-regular-400.ab47faeab8ddc5f809ec.svg",
+    "static/media/fa-brands-400.eot": "/personal-watch-list/static/media/fa-brands-400.607a77859353c0cc1882.eot",
+    "static/media/fa-brands-400.ttf": "/personal-watch-list/static/media/fa-brands-400.5818bbd07dfd7095920a.ttf",
+    "static/media/fa-solid-900.woff": "/personal-watch-list/static/media/fa-solid-900.a940d584750708f5435c.woff",
+    "static/media/fa-brands-400.woff": "/personal-watch-list/static/media/fa-brands-400.ee26f57bc9e3619b022b.woff",
+    "static/media/fa-solid-900.woff2": "/personal-watch-list/static/media/fa-solid-900.9451d5fee89b51a20f8a.woff2",
+    "static/media/fa-brands-400.woff2": "/personal-watch-list/static/media/fa-brands-400.31015e861aeb30ff8355.woff2",
+    "static/media/fa-regular-400.eot": "/personal-watch-list/static/media/fa-regular-400.0747be4cba2f8600544f.eot",
+    "static/media/fa-regular-400.ttf": "/personal-watch-list/static/media/fa-regular-400.c3146b3524e97475c094.ttf",
+    "static/media/fa-regular-400.woff": "/personal-watch-list/static/media/fa-regular-400.8b892b7904a39e37c53d.woff",
+    "static/media/fa-regular-400.woff2": "/personal-watch-list/static/media/fa-regular-400.c52405129ae48097815d.woff2",
+    "index.html": "/personal-watch-list/index.html",
+    "main.7be20927.css.map": "/personal-watch-list/static/css/main.7be20927.css.map",
+    "main.bca5db30.js.map": "/personal-watch-list/static/js/main.bca5db30.js.map",
+    "787.4be3b466.chunk.js.map": "/personal-watch-list/static/js/787.4be3b466.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7be20927.css",
+    "static/js/main.bca5db30.js"
+  ]
+}
