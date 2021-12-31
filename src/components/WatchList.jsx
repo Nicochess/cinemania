@@ -9,7 +9,10 @@ const WatchList = () => {
     <div className="movie-page">
       <div className="container">
         <div className="header">
-          <h1 className="heading">WatchList Page</h1>
+          <h1 className="heading">Ainda tenho que assistir</h1>
+          <span className="count-pill">
+            {globalContext.watchlist.length} {globalContext.watchlist.length === 1 ? "Movie" : "Movies"}
+          </span>
         </div>
         {globalContext.watchlist.length > 0 ? (
           <div className="movie-grid">
@@ -18,7 +21,7 @@ const WatchList = () => {
             })}
           </div>
         ) : (
-          <h4>Adicione algum filme</h4>
+          <h4 className="no-movies">Adicione algum filme</h4>
         )}
       </div>
     </div>

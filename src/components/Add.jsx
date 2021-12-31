@@ -27,7 +27,7 @@ const Add = () => {
           <div className="input-wrapper">
             <input
               type="text"
-              placeholder="Search for a movie"
+              placeholder="Busque por um filme! :D"
               onChange={handleChange}
               value={query}
             />

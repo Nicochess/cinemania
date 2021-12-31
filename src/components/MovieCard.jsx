@@ -7,7 +7,7 @@ const MovieCard = ({ movie, type }) => {
       <div className="overlay"></div>
 
       <img
-        src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
         alt={movie.title}
       />
 

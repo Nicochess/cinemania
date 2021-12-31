@@ -7,18 +7,18 @@ const Header = () => {
       <div className="container">
         <div className="inner-content">
           <div className="brand">
-            <Link to="/">WatchList</Link>
+            <Link to="/">Cinemania</Link>
           </div>
           <ul className="nav-links">
             <li>
-              <Link to="/">Watch List</Link>
+              <Link to="/">Para assistir</Link>
             </li>
             <li>
-              <Link to="/watched">Watched List</Link>
+              <Link to="/watched">Assistidos</Link>
             </li>
             <li>
               <Link to="/add" className="btn">
-                Add
+                Procurar
               </Link>
             </li>
           </ul>
