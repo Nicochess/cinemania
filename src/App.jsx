@@ -1,5 +1,5 @@
 import "./sass/styles.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import WatchList from "./pages/WatchList";
 import Watched from "./pages/Watched";
@@ -8,11 +8,11 @@ import "./lib/font-awesome/css/all.min.css";
 
 function App() {
   return (
-      <Router>
+      <Router basename="/">
         <Header />
         <Routes>
-          <Route path="/personal-watch-list" element={<WatchList />} />
-          <Route path="/personal-watch-list/watched" element={<Watched />} />
+          <Route path="/" element={<WatchList />} />
+          <Route path="/watched" element={<Watched />} />
           <Route path="/personal-watch-list/add" element={<Add />} />
         </Routes>
       </Router>
