@@ -159,7 +159,7 @@ header .nav-links li {
   color: transparent;
 }
 
-.result-card .result-card .info {
+.result-card .info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -167,12 +167,15 @@ header .nav-links li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .result-card .info .title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
   font-size: 1.25rem;
   color: var(--primary);
   font-weight: 600;
@@ -184,8 +187,15 @@ header .nav-links li {
   color: var(--primary);
 }
 
+.result-card .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .result-card .controls button {
   margin-right: 10px;
+  font-size: 14px;
 }
 
 .movie-page {

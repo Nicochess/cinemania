@@ -18,6 +18,8 @@ const Card = ({ movie }) => {
     ? true
     : false;
 
+  const watchedDisable = storedMovieWatched ? true : false;
+
   return (
     <div className="result-card">
       <div className="poster-wrapper">
@@ -43,7 +45,15 @@ const Card = ({ movie }) => {
             disabled={watchListDisable}
             onClick={() => globalContext.addToWatchlist(movie)}
           >
-            Adicionar à lista
+            Quero assistir
+          </button>
+
+          <button
+            className="btn"
+            disabled={watchedDisable}
+            onClick={() => globalContext.addToWatched(movie)}
+          >
+            Já assisti
           </button>
         </div>
       </div>

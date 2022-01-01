@@ -140,27 +140,37 @@ header {
         color: transparent;
     }
 
-    .result-card .info {
+    .info {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
+
+        .title {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .release-date {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--primary);
+        }
     }
 
-    .info .title {
-        font-size: 1.25rem;
-        color: var(--primary);
-        font-weight: 600;
+    .controls {
+        display: flex;
+
+        button {
+            margin-right: 10px;
+            font-size: 14px;
+        }
     }
 
-    .info .release-date {
-        font-size: 1.25rem;
-        font-weight: 300;
-        color: var(--primary);
-    }
-
-    .controls button {
-        margin-right: 10px;
-    }
 }
 
 .movie-page {
