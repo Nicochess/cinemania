@@ -277,11 +277,93 @@ header {
     }
 }
 
+.main__card {
+    background-color: #036168;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+    h2 {
+        font-size: 35px;
+        color: #f7f7f7;
+        padding: 15px 0;
+        font-weight: 700;
+    }
+
+    .alternative {
+        position: relative;
+
+        h2:before {
+            position: absolute;
+            content: "";
+            height: 2px;
+            width: 55px;
+            bottom: 50%;
+            left: 186px;
+            background: #fff;
+        }
+
+        h2:after {
+            position: absolute;
+            content: "";
+            height: 2px;
+            width: 55px;
+            bottom: 50%;
+            right: 186px;
+            background: #fff;
+        }
+    }
+
+    .card__form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: flex-start;
+
+        label {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 3px;
+
+        }
+    }
+
+    input {
+        outline: none;
+        padding: 10px 30px;
+        border: 1px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+
+        &::placeholder {
+            font-size: 13px;
+            color: #a7a7a7;
+        }
+
+    }
+
+    .btn {
+        background-color: #688977;
+        color: #fff;
+        margin-top: 20px;
+        align-self: center;
+    }
+}
+
 @media (min-width: 768px) {
     header .inner-content {
         flex-wrap: nowrap;
         justify-content: space-between;
     }
+
     .movie-grid {
         grid-template-columns: repeat(3, 1fr);
     }

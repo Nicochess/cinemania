@@ -316,6 +316,128 @@ header .nav-links li {
   color: var(--secondary);
 }
 
+.main__card {
+  background-color: #036168;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+.main__card h2 {
+  font-size: 35px;
+  color: #f7f7f7;
+  padding: 15px 0;
+  font-weight: 700;
+}
+
+.main__card .alternative {
+  position: relative;
+}
+
+.main__card .alternative h2:before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 55px;
+  bottom: 50%;
+  left: 186px;
+  background: #fff;
+}
+
+.main__card .alternative h2:after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 55px;
+  bottom: 50%;
+  right: 186px;
+  background: #fff;
+}
+
+.main__card .card__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.main__card .card__form label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+
+.main__card input {
+  outline: none;
+  padding: 10px 30px;
+  border: 1px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.main__card input::-webkit-input-placeholder {
+  font-size: 13px;
+  color: #a7a7a7;
+}
+
+.main__card input:-ms-input-placeholder {
+  font-size: 13px;
+  color: #a7a7a7;
+}
+
+.main__card input::-ms-input-placeholder {
+  font-size: 13px;
+  color: #a7a7a7;
+}
+
+.main__card input::placeholder {
+  font-size: 13px;
+  color: #a7a7a7;
+}
+
+.main__card .btn {
+  background-color: #688977;
+  color: #fff;
+  margin-top: 20px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 @media (min-width: 768px) {
   header .inner-content {
     -ms-flex-wrap: nowrap;
