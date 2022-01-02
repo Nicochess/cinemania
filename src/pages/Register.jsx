@@ -32,42 +32,48 @@ const Register = () => {
 
   return (
     <main className="main__card">
-      <div className="alternative">
-        <h2>Registre-se</h2>
-        {error}
-      </div>
-      <form className="card__form" onSubmit={handleSubmit}>
-        <label htmlFor="email">E-mail</label>
-        <input
-          type="email"
-          id="email"
-          ref={emailRef}
-          required
-          placeholder="Insira seu e-mail"
-        />
-        <label htmlFor="password">Senha</label>
-        <input
-          type="password"
-          id="password"
-          ref={passwordRef}
-          required
-          placeholder="Insira sua senha"
-        />
-        <label htmlFor="password-confirm">Confirme sua senha</label>
-        <input
-          type="password"
-          id="password-confirm"
-          ref={passwordConfirmRef}
-          required
-          placeholder="Repita sua senha"
-        />
-        <button type="submit" className="btn" disabled={loading}>
-          Concluir Cadastro
-        </button>
-      </form>
-      <div>
-        Já possui uma conta ? <Link to="/login">Logar</Link>
-      </div>
+      <section className="card__profile">
+      <h1>Cinemania</h1>
+        <div className="icon--cinerama"></div>
+        <div className="alternative">
+          <h2>Registre-se</h2>
+          {error}
+        </div>
+        <form className="card__form" onSubmit={handleSubmit}>
+          <label htmlFor="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            ref={emailRef}
+            required
+            placeholder="Insira seu e-mail"
+          />
+          <label htmlFor="password">Senha</label>
+          <input
+            type="password"
+            id="password"
+            ref={passwordRef}
+            required
+            placeholder="Insira sua senha"
+          />
+          <label htmlFor="password-confirm">Confirme sua senha</label>
+          <input
+            type="password"
+            id="password-confirm"
+            ref={passwordConfirmRef}
+            required
+            placeholder="Repita sua senha"
+          />
+          <button type="submit" className="btn" disabled={loading}>
+            Concluir Cadastro
+          </button>
+        </form>
+      </section>
+      <section className="card__senha">
+      <div className="criar__conta">
+          Já possui uma conta ? <Link to="/login">Logar</Link>
+        </div>
+      </section>
     </main>
   );
 };

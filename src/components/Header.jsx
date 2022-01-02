@@ -10,6 +10,7 @@ const Header = () => {
       <div className="container">
         <div className="inner-content">
           <div className="brand">
+        <div className="logo__header"></div>
             <Link to="/">Cinemania</Link>
           </div>
           <ul className="nav-links">
