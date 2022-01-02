@@ -1,11 +1,10 @@
 import { useContext, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AuthContext from "../context/AuthProvider";
 
-const Login = () => {
+const ForgotPassword = () => {
   const emailRef = useRef();
-  const passwordRef = useRef();
-  const { login } = useContext(AuthContext);
+  const { forgotPassword } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -16,10 +15,10 @@ const Login = () => {
     try {
       setError("");
       setLoading(true);
-      login(emailRef.current.value, passwordRef.current.value);
-      navigate("/");
+      forgotPassword(emailRef.current.value);
+      navigate('/login')
     } catch {
-      setError("Não conseguimos foi possível logar");
+      setError("Não conseguimos encontrar seu email.");
     }
 
     setLoading(false);
@@ -28,7 +27,7 @@ const Login = () => {
   return (
       <main className="main__card">
         <div className="alternative">
-          <h2>Faça Login</h2>
+          <h2>Recuperação</h2>
           {error}
         </div>
         <form className="card__form" onSubmit={handleSubmit}>
@@ -40,26 +39,12 @@ const Login = () => {
             required
             placeholder="Insira seu e-mail"
           />
-          <label htmlFor="password">Senha</label>
-          <input
-            type="password"
-            id="password"
-            ref={passwordRef}
-            required
-            placeholder="Insira sua senha"
-          />
           <button type="submit" className="btn" disabled={loading}>
-            Fazer login
+            Recuperar senha
           </button>
         </form>
-        <div>
-          <Link to='/forgot'>Recuperar minha senha</Link>
-        </div>
-        <div>
-          Deseja criar uma conta ? <Link to='/register'>Registre-se</Link>
-        </div>
       </main>
   );
 };
 
-export default Login;
+export default ForgotPassword;

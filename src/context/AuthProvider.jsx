@@ -4,6 +4,9 @@ import { auth } from "../firebase";
 const AuthContext = createContext({
   currentUser: "",
   register: (email, password) => {},
+  login: (email, password) => {},
+  forgotPassword: (email) => {},
+  logOut: () => {}
 });
 
 export const AuthProvider = ({ children }) => {
@@ -12,6 +15,18 @@ export const AuthProvider = ({ children }) => {
 
   const register = (email, password) => {
     return auth.createUserWithEmailAndPassword(email, password);
+  };
+
+  const login = (email, password) => {
+    return auth.signInWithEmailAndPassword(email, password);
+  };
+
+  const forgotPassword = (email) => {
+    return auth.sendPasswordResetEmail(email);
+  };
+
+  const logOut = () => {
+    return auth.signOut();
   };
 
   useEffect(() => {
@@ -26,6 +41,9 @@ export const AuthProvider = ({ children }) => {
   const context = {
     currentUser: currentUser,
     register,
+    login,
+    forgotPassword,
+    logOut
   };
 
   return (

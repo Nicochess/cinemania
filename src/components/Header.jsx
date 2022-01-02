@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import AuthContext from "../context/AuthProvider";
 
 const Header = () => {
+  const { logOut } = useContext(AuthContext);
+
   return (
     <header>
       <div className="container">
@@ -22,10 +25,13 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/register">Registrar</Link>
+              <button
+                className="btn"
+                style={{ backgroundColor: "red", color: "white" }}
+                onClick={logOut}
+              >
+                Log Out
+              </button>
             </li>
           </ul>
         </div>
