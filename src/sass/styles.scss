@@ -85,6 +85,21 @@ header {
     .brand a {
         font-weight: 700;
         font-size: 1.5rem;
+        margin-top: 10px;
+    }
+
+    .brand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .logo__header {
+            display: block;
+            background: url('./images/homepage-icon.webp');
+            width: 76px;
+            height: 78px;
+            background-size: cover;
+        }
     }
 
     .nav-links {
@@ -278,13 +293,38 @@ header {
 }
 
 .main__card {
-    background-color: #036168;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    max-width: 380px;
+    margin: 10px auto;
+
+    .card__profile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        border-radius: 5px;
+        background-color: #036168;
+    }
+
+    h1 {
+        font-size: 50px;
+        color: #fff;
+    }
+
+    .icon--cinerama {
+        display: block;
+        background: url('../sass/images/cinema.png');
+        width: 150px;
+        height: 150px;
+        background-size: cover;
+    }
+
 
     h2 {
         font-size: 35px;
@@ -353,8 +393,30 @@ header {
     .btn {
         background-color: #688977;
         color: #fff;
-        margin-top: 20px;
+        margin: 20px 0;
         align-self: center;
+    }
+
+}
+
+.card__senha {
+    margin-top: 10px;
+    background-color: #036168;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    padding: 15px;
+
+    a {
+        color: white;
+        font-size: 17px;
+    }
+
+    .criar__conta {
+        font-size: 17px;
+        color: #f7f7f7;
     }
 }
 

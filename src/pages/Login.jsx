@@ -26,7 +26,10 @@ const Login = () => {
   };
 
   return (
-      <main className="main__card">
+    <main className="main__card">
+      <section className="card__profile">
+        <h1>Cinemania</h1>
+        <div className="icon--cinerama"></div>
         <div className="alternative">
           <h2>Faça Login</h2>
           {error}
@@ -52,13 +55,16 @@ const Login = () => {
             Fazer login
           </button>
         </form>
+      </section>
+      <section className="card__senha">
         <div>
           <Link to='/forgot'>Recuperar minha senha</Link>
         </div>
-        <div>
+        <div className="criar__conta">
           Deseja criar uma conta ? <Link to='/register'>Registre-se</Link>
         </div>
-      </main>
+      </section>
+    </main>
   );
 };
 
