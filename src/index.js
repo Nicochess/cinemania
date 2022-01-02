@@ -6,7 +6,7 @@ import { GlobalProvider } from "./context/GlobalState";
 ReactDOM.render(
   <React.StrictMode>
     <GlobalProvider>
-      <App />
+        <App />
     </GlobalProvider>
   </React.StrictMode>,
   document.getElementById("root")
