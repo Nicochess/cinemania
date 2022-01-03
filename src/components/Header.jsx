@@ -1,9 +1,19 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../context/AuthProvider";
 
 const Header = () => {
   const { logOut } = useContext(AuthContext);
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    try {
+      logOut();
+      navigate('/')
+    } catch {
+      console.log('Error')
+    }
+  }
 
   return (
     <header>
@@ -11,11 +21,11 @@ const Header = () => {
         <div className="inner-content">
           <div className="brand">
         <div className="logo__header"></div>
-            <Link to="/">Cinemania</Link>
+            <Link to="/watch">Cinemania</Link>
           </div>
           <ul className="nav-links">
             <li>
-              <Link to="/">Para assistir</Link>
+              <Link to="/watch">Para assistir</Link>
             </li>
             <li>
               <Link to="/watched">Assistidos</Link>
@@ -29,7 +39,7 @@ const Header = () => {
               <button
                 className="btn"
                 style={{ backgroundColor: "red", color: "white" }}
-                onClick={logOut}
+                onClick={handleLogout}
               >
                 Log Out
               </button>

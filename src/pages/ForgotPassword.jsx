@@ -16,7 +16,7 @@ const ForgotPassword = () => {
       setError("");
       setLoading(true);
       forgotPassword(emailRef.current.value);
-      navigate('/login')
+      navigate('/')
     } catch {
       setError("Não conseguimos encontrar seu email.");
     }

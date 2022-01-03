@@ -5,9 +5,9 @@ import AuthContext from "../context/AuthProvider";
 const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { login } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -16,13 +16,13 @@ const Login = () => {
     try {
       setError("");
       setLoading(true);
-      login(emailRef.current.value, passwordRef.current.value);
-      navigate("/");
+      login(emailRef.current.value, passwordRef.current.value).then(() => {
+        navigate("/watch"); 
+      })
     } catch {
       setError("Não conseguimos foi possível logar");
     }
 
-    setLoading(false);
   };
 
   return (

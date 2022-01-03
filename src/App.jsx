@@ -6,7 +6,6 @@ import Add from "./pages/Add";
 import Login from "./pages/Login";
 import "./lib/font-awesome/css/all.min.css";
 import Register from "./pages/Register";
-import { AuthProvider } from "./context/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute";
 import ForgotPassword from "./pages/ForgotPassword";
 import MainNavigate from "./pages/MainNavigate";
@@ -14,21 +13,18 @@ import MainNavigate from "./pages/MainNavigate";
 function App() {
   return (
     <Router basename="/">
-      <AuthProvider>
-        <Routes>
-          <Route element={<MainNavigate />}>
-            <Route element={<PrivateRoute />}>
-              <Route path="/watched" element={<Watched />} />
-              <Route path="/add" element={<Add />} />
-              <Route path="/" element={<WatchList />} />
-            </Route>
+      <Routes>
+        <Route element={<MainNavigate />}>
+          <Route element={<PrivateRoute />}>
+            <Route path="/watched" element={<Watched />} />
+            <Route path="/add" element={<Add />} />
+            <Route path="/watch" element={<WatchList />} />
           </Route>
-
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/forgot" element={<ForgotPassword />} />
-        </Routes>
-      </AuthProvider>
+        </Route>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot" element={<ForgotPassword />} />
+      </Routes>
     </Router>
   );
 }

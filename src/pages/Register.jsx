@@ -6,9 +6,9 @@ const Register = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { register } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const { register } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -21,13 +21,12 @@ const Register = () => {
     try {
       setError("");
       setLoading(true);
-      register(emailRef.current.value, passwordRef.current.value);
-      navigate("/");
+      register(emailRef.current.value, passwordRef.current.value).then(() => {
+        navigate("/watch");
+      })
     } catch {
       setError("Não conseguimos criar sua conta :(");
     }
-
-    setLoading(false);
   };
 
   return (
@@ -71,7 +70,7 @@ const Register = () => {
       </section>
       <section className="card__senha">
       <div className="criar__conta">
-          Já possui uma conta ? <Link to="/login">Logar</Link>
+          Já possui uma conta ? <Link to="/">Logar</Link>
         </div>
       </section>
     </main>
