@@ -32,13 +32,12 @@ const Register = () => {
   return (
     <main className="main__card">
       <section className="card__profile">
-      <h1>Cinemania</h1>
         <div className="icon--cinerama"></div>
         <div className="alternative">
-          <h2>Registre-se</h2>
           {error}
         </div>
         <form className="card__form" onSubmit={handleSubmit}>
+          <h2>Registre-se</h2>
           <label htmlFor="email">E-mail</label>
           <input
             type="email"

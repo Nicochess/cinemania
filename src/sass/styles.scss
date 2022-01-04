@@ -60,7 +60,7 @@ input:focus {
 }
 
 header {
-    background-color: #2F80ED;
+    background-color: #2f80ed;
 
     .inner-content {
         display: flex;
@@ -95,7 +95,7 @@ header {
 
         .logo__header {
             display: block;
-            background: url('./images/homepage-icon.webp');
+            background: url("./images/homepage-icon.webp");
             width: 76px;
             height: 78px;
             background-size: cover;
@@ -185,7 +185,6 @@ header {
             font-size: 14px;
         }
     }
-
 }
 
 .movie-page {
@@ -300,23 +299,18 @@ header {
     flex-direction: column;
     min-height: 100vh;
     margin: 0 auto;
-    background: url('./images/background-retangulo-1.svg'), url('./images/background-retangulo-2.svg'), url('./images/background-retangulo-3.svg');
-    background-repeat: no-repeat, no-repeat, no-repeat;
+    background: url("./images/background-retangulo-1.svg"), url("./images/background-retangulo-2.svg"),
+        url("./images/background-retangulo-3.svg");
+    background-repeat: repeat-x, repeat-x, repeat-x;
     background-size: contain, cover, contain;
-    background-position-y: -100px, -140px, 110%;
+    background-position-y: -25vh, -35vh, 80vh;
 
     .card__profile {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         width: 100%;
         border-radius: 5px;
-    }
-
-    h1 {
-        font-size: 50px;
-        color: #fff;
     }
 
     .icon--cinerama {
@@ -327,10 +321,9 @@ header {
         background-size: cover;
     }
 
-
     h2 {
-        font-size: 35px;
-        color: #2F80ED;
+        font-size: 34px;
+        color: #2f80ed;
         padding: 15px 0;
         font-weight: 700;
     }
@@ -339,46 +332,42 @@ header {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        align-content: flex-start;
-        background-color: white;
-        border-radius: 5px;
+        width: 100%;
+        max-width: 310px;
         padding: 30px;
+        border-radius: 5px;
+        background-color: white;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
         label {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #2F80ED;
-            font-size: 16px;
+            color: #2f80ed;
+            font-size: 14px;
             font-weight: 400;
             margin-bottom: 3px;
-
         }
     }
 
     input {
+        width: 100%;
         outline: none;
-        padding: 10px 30px;
-        border: 1px solid #2F80ED;
-        ;
+        padding: 10px;
+        border: 1px solid #2f80ed;
         border-radius: 5px;
         margin-bottom: 15px;
         background: transparent;
-
 
         &::placeholder {
             font-size: 13px;
             color: #a7a7a7;
         }
-
     }
 
     .btn {
+        width: 100%;
+        font-size: 14px;
         color: white;
         background-color: #97bff6;
-        margin: 20px 0;
+        margin: 10px 0;
         align-self: center;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
@@ -386,12 +375,12 @@ header {
             background-color: darken(#97bff6, 15%);
         }
     }
-
 }
 
 .card__senha {
-    margin: 20px;
-    width: 69%;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 310px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -400,15 +389,14 @@ header {
     background-color: white;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
-    a {
-        color: #2F80ED;
+    a,
+    .criar__conta {
+        color: #2f80ed;
         font-size: 14px;
-        font-weight: 600;
     }
 
-    .criar__conta {
-        font-size: 14px;
-        color: #2F80ED;
+    a {
+        font-weight: 600;
     }
 }
 
@@ -423,39 +411,17 @@ header {
     }
 
     .main__card {
-        background-position-y: -252px, -424px, 129%;
-
-        form {
-            background-color: white;
-            border-radius: 5px;
-            padding: 30px;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
-            .btn {
-                width: 100%;
-            }
-        }
-    }
-
-    .card__senha {
-        width: 38%;
+        background-position-y: -50vh, -70vh, 80vh;
     }
 }
 
-
-
-
-@media (min-width: 992px) {
+@media (min-width: 927px) {
     .movie-grid {
         grid-template-columns: repeat(5, 1fr);
     }
 
     .main__card {
         background-size: cover, cover, contain;
-        background-position-y: -449px, -800px, 451%;
-    }
-
-    .card__senha {
-        width: 22%;
+        background-position-y: -35vw, -60vw, 80vh;
     }
 }

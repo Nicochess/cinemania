@@ -1,5 +1,5 @@
 import { useContext, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../context/AuthProvider";
 
 const ForgotPassword = () => {
@@ -16,7 +16,7 @@ const ForgotPassword = () => {
       setError("");
       setLoading(true);
       forgotPassword(emailRef.current.value);
-      navigate('/')
+      navigate("/");
     } catch {
       setError("Não conseguimos encontrar seu email.");
     }
@@ -25,25 +25,32 @@ const ForgotPassword = () => {
   };
 
   return (
-      <main className="main__card">
-        <div className="alternative">
-          <h2>Recuperação</h2>
-          {error}
+    <main className="main__card">
+      <div className="icon--cinerama"></div>
+      <form className="card__form" onSubmit={handleSubmit}>
+        <h2>Recuperação</h2>
+        {error}
+        <label htmlFor="email">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          ref={emailRef}
+          required
+          placeholder="Insira seu e-mail"
+        />
+        <button type="submit" className="btn" disabled={loading}>
+          Recuperar senha
+        </button>
+      </form>
+      <section className="card__senha">
+        <div>
+          <Link to="/register">Desejo criar outra conta</Link>
         </div>
-        <form className="card__form" onSubmit={handleSubmit}>
-          <label htmlFor="email">E-mail</label>
-          <input
-            type="email"
-            id="email"
-            ref={emailRef}
-            required
-            placeholder="Insira seu e-mail"
-          />
-          <button type="submit" className="btn" disabled={loading}>
-            Recuperar senha
-          </button>
-        </form>
-      </main>
+        <div className="criar__conta">
+          Se lembrou da senha ? <Link to="/">Login</Link>
+        </div>
+      </section>
+    </main>
   );
 };
 

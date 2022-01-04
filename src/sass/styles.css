@@ -61,7 +61,7 @@ input:focus {
 }
 
 header {
-  background-color: #2F80ED;
+  background-color: #2f80ed;
 }
 
 header .inner-content {
@@ -355,9 +355,9 @@ header .nav-links li {
   min-height: 100vh;
   margin: 0 auto;
   background: url("./images/background-retangulo-1.svg"), url("./images/background-retangulo-2.svg"), url("./images/background-retangulo-3.svg");
-  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-repeat: repeat-x, repeat-x, repeat-x;
   background-size: contain, cover, contain;
-  background-position-y: -100px, -140px, 110%;
+  background-position-y: -25vh, -35vh, 80vh;
 }
 
 .main__card .card__profile {
@@ -368,19 +368,11 @@ header .nav-links li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
   border-radius: 5px;
-}
-
-.main__card h1 {
-  font-size: 50px;
-  color: #fff;
 }
 
 .main__card .icon--cinerama {
@@ -392,8 +384,8 @@ header .nav-links li {
 }
 
 .main__card h2 {
-  font-size: 35px;
-  color: #2F80ED;
+  font-size: 34px;
+  color: #2f80ed;
   padding: 15px 0;
   font-weight: 700;
 }
@@ -409,39 +401,27 @@ header .nav-links li {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
-  background-color: white;
-  border-radius: 5px;
+  width: 100%;
+  max-width: 310px;
   padding: 30px;
+  border-radius: 5px;
+  background-color: white;
   -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .main__card .card__form label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #2F80ED;
-  font-size: 16px;
+  color: #2f80ed;
+  font-size: 14px;
   font-weight: 400;
   margin-bottom: 3px;
 }
 
 .main__card input {
+  width: 100%;
   outline: none;
-  padding: 10px 30px;
-  border: 1px solid #2F80ED;
+  padding: 10px;
+  border: 1px solid #2f80ed;
   border-radius: 5px;
   margin-bottom: 15px;
   background: transparent;
@@ -468,9 +448,11 @@ header .nav-links li {
 }
 
 .main__card .btn {
+  width: 100%;
+  font-size: 14px;
   color: white;
   background-color: #97bff6;
-  margin: 20px 0;
+  margin: 10px 0;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -483,8 +465,9 @@ header .nav-links li {
 }
 
 .card__senha {
-  margin: 20px;
-  width: 69%;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 310px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -502,15 +485,14 @@ header .nav-links li {
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.card__senha a {
-  color: #2F80ED;
+.card__senha a,
+.card__senha .criar__conta {
+  color: #2f80ed;
   font-size: 14px;
-  font-weight: 600;
 }
 
-.card__senha .criar__conta {
-  font-size: 14px;
-  color: #2F80ED;
+.card__senha a {
+  font-weight: 600;
 }
 
 @media (min-width: 768px) {
@@ -526,34 +508,18 @@ header .nav-links li {
         grid-template-columns: repeat(3, 1fr);
   }
   .main__card {
-    background-position-y: -252px, -424px, 129%;
-  }
-  .main__card form {
-    background-color: white;
-    border-radius: 5px;
-    padding: 30px;
-    -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  }
-  .main__card form .btn {
-    width: 100%;
-  }
-  .card__senha {
-    width: 38%;
+    background-position-y: -50vh, -70vh, 80vh;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 927px) {
   .movie-grid {
     -ms-grid-columns: (1fr)[5];
         grid-template-columns: repeat(5, 1fr);
   }
   .main__card {
     background-size: cover, cover, contain;
-    background-position-y: -449px, -800px, 451%;
-  }
-  .card__senha {
-    width: 22%;
+    background-position-y: -35vw, -60vw, 80vh;
   }
 }
 /*# sourceMappingURL=styles.css.map */
