@@ -19,6 +19,11 @@ const Add = () => {
       setResults([]);
     }
   };
+  
+  const [index, setIndex] = useState(1)
+  const initialState = results.slice(0, index * 10)
+  const [list, setList] = useState(initialState)
+
 
   return (
     <div className="add-page">
