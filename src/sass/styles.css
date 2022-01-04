@@ -386,8 +386,8 @@ header .nav-links li {
 .main__card .icon--cinerama {
   display: block;
   background: url("../sass/images/cinema.png");
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   background-size: cover;
 }
 
