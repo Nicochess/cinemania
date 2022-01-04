@@ -38,7 +38,7 @@ button {
 
 .btn {
   padding: 10px 15px;
-  background-color: var(--white);
+  background-color: var(--secondary);
   color: var(--black);
   border-radius: 5px;
   text-transform: uppercase;
@@ -48,6 +48,10 @@ button {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   line-height: 1.1;
+}
+
+.button {
+  background-color: var(--white);
 }
 
 .btn:hover {
