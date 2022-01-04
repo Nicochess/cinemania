@@ -411,6 +411,11 @@ header .nav-links li {
           align-items: flex-start;
   -ms-flex-line-pack: start;
       align-content: flex-start;
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .main__card .card__form label {
@@ -479,7 +484,7 @@ header .nav-links li {
 
 .card__senha {
   margin: 20px;
-  width: 70%;
+  width: 69%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
