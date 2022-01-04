@@ -61,7 +61,7 @@ input:focus {
 }
 
 header {
-  background-color: var(--primary);
+  background-color: #2F80ED;
 }
 
 header .inner-content {
@@ -393,33 +393,9 @@ header .nav-links li {
 
 .main__card h2 {
   font-size: 35px;
-  color: #f7f7f7;
+  color: #2F80ED;
   padding: 15px 0;
   font-weight: 700;
-}
-
-.main__card .alternative {
-  position: relative;
-}
-
-.main__card .alternative h2:before {
-  position: absolute;
-  content: "";
-  height: 2px;
-  width: 55px;
-  bottom: 50%;
-  left: 186px;
-  background: #fff;
-}
-
-.main__card .alternative h2:after {
-  position: absolute;
-  content: "";
-  height: 2px;
-  width: 55px;
-  bottom: 50%;
-  right: 186px;
-  background: #fff;
 }
 
 .main__card .card__form {
@@ -451,7 +427,7 @@ header .nav-links li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #fff;
+  color: #2F80ED;
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 3px;
@@ -460,9 +436,10 @@ header .nav-links li {
 .main__card input {
   outline: none;
   padding: 10px 30px;
-  border: 1px;
+  border: 1px solid #2F80ED;
   border-radius: 5px;
   margin-bottom: 15px;
+  background: transparent;
 }
 
 .main__card input::-webkit-input-placeholder {
@@ -486,18 +463,23 @@ header .nav-links li {
 }
 
 .main__card .btn {
-  background-color: #688977;
-  color: #fff;
+  color: white;
+  background-color: #97bff6;
   margin: 20px 0;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.main__card .btn:hover {
+  background-color: #5194f0;
 }
 
 .card__senha {
-  margin-top: 10px;
-  background-color: #036168;
-  width: 100%;
+  margin: 20px;
+  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -510,16 +492,20 @@ header .nav-links li {
           align-items: center;
   border-radius: 5px;
   padding: 15px;
+  background-color: white;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .card__senha a {
-  color: white;
-  font-size: 17px;
+  color: #2F80ED;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .card__senha .criar__conta {
-  font-size: 17px;
-  color: #f7f7f7;
+  font-size: 14px;
+  color: #2F80ED;
 }
 
 @media (min-width: 768px) {
@@ -534,12 +520,35 @@ header .nav-links li {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
   }
+  .main__card {
+    background-position-y: -252px, -424px, 129%;
+  }
+  .main__card form {
+    background-color: white;
+    border-radius: 5px;
+    padding: 30px;
+    -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  .main__card form .btn {
+    width: 100%;
+  }
+  .card__senha {
+    width: 38%;
+  }
 }
 
 @media (min-width: 992px) {
   .movie-grid {
     -ms-grid-columns: (1fr)[5];
         grid-template-columns: repeat(5, 1fr);
+  }
+  .main__card {
+    background-size: cover, cover, contain;
+    background-position-y: -449px, -800px, 451%;
+  }
+  .card__senha {
+    width: 22%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
