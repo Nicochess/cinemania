@@ -353,8 +353,11 @@ header .nav-links li {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100vh;
-  max-width: 380px;
-  margin: 10px auto;
+  margin: 0 auto;
+  background: url("./images/background-retangulo-1.svg"), url("./images/background-retangulo-2.svg"), url("./images/background-retangulo-3.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: contain, cover, contain;
+  background-position-y: -100px, -140px, 110%;
 }
 
 .main__card .card__profile {
@@ -371,9 +374,8 @@ header .nav-links li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 90%;
+  width: 100%;
   border-radius: 5px;
-  background-color: #036168;
 }
 
 .main__card h1 {
@@ -495,7 +497,7 @@ header .nav-links li {
 .card__senha {
   margin-top: 10px;
   background-color: #036168;
-  width: 90%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
