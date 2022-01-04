@@ -12,6 +12,11 @@ const MovieCard = ({ movie, type }) => {
       />
 
       <MovieControls movie={movie} type={type} />
+      {type === "watched" && (
+        <span className="watched">
+          <i className="fa-fw far fa-eye" /> {movie && movie.watchedDate}
+        </span>
+      )}
     </div>
   );
 };

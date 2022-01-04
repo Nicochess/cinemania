@@ -249,7 +249,7 @@ header {
 
     img {
         width: 100%;
-        height: 100%;
+        height: 93%;
         object-fit: cover;
         display: block;
     }
@@ -262,6 +262,7 @@ header {
         height: 100%;
         border: 3px solid transparent;
         transition: all 0.3s ease;
+        z-index: 1;
     }
 
     .inner-card-controls {
@@ -276,6 +277,24 @@ header {
         opacity: 0;
         z-index: -1;
         transition: all 0.3s ease;
+    }
+
+    .watched {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 7%;
+        background: #000000;
+        color: white;
+        font-size: 11px;
+        font-weight: 600;
+        width: 100%;
+        letter-spacing: 1px;
+
+        i {
+            margin-right: 3px;
+            line-height: 5px;
+        }
     }
 }
 
@@ -412,6 +431,10 @@ header {
 
     .main__card {
         background-position-y: -50vh, -70vh, 80vh;
+    }
+
+    .movie-card .watched {
+        font-size: 12px;
     }
 }
 

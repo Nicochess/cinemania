@@ -38,10 +38,20 @@ export const GlobalProvider = ({ children }) => {
     });
   };
 
+  const dateBuilder = () => {
+    const date = new Date().toLocaleDateString("pt-BR", {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+    });
+    return date;
+  };
+
   const addToWatched = (movie) => {
     removeToWatchlist(movie.id);
     setWatched((prevMovies) => {
-      const newState = [movie, ...prevMovies];
+      let watchedDate = dateBuilder();
+      const newState = [{ ...movie, watchedDate }, ...prevMovies];
       updateWatched(newState);
       return newState;
     });
@@ -63,8 +73,10 @@ export const GlobalProvider = ({ children }) => {
   useEffect(() => {
     const getDocs = async () => {
       setDocs().then((data) => {
-        setWatchlist(data.watchlist);
-        setWatched(data.watched);
+        if (data) {
+          setWatchlist(data.watchlist);
+          setWatched(data.watched);
+        }
       });
     };
 

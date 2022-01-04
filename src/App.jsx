@@ -9,23 +9,29 @@ import Register from "./pages/Register";
 import PrivateRoute from "./components/PrivateRoute";
 import ForgotPassword from "./pages/ForgotPassword";
 import MainNavigate from "./pages/MainNavigate";
+import { GlobalProvider } from "./context/GlobalState";
+import { AuthProvider } from "./context/AuthProvider";
 
 function App() {
   return (
-    <Router basename="/">
-      <Routes>
-        <Route element={<MainNavigate />}>
-          <Route element={<PrivateRoute />}>
-            <Route path="/watched" element={<Watched />} />
-            <Route path="/add" element={<Add />} />
-            <Route path="/watch" element={<WatchList />} />
-          </Route>
-        </Route>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forgot" element={<ForgotPassword />} />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <GlobalProvider>
+        <Router basename="/">
+          <Routes>
+            <Route element={<MainNavigate />}>
+              <Route element={<PrivateRoute />}>
+                <Route path="/watched" element={<Watched />} />
+                <Route path="/add" element={<Add />} />
+                <Route path="/watch" element={<WatchList />} />
+              </Route>
+            </Route>
+            <Route path="/" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/forgot" element={<ForgotPassword />} />
+          </Routes>
+        </Router>
+      </GlobalProvider>
+    </AuthProvider>
   );
 }
 
