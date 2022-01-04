@@ -301,9 +301,9 @@ header {
     margin: 0 auto;
     background: url("./images/background-retangulo-1.svg"), url("./images/background-retangulo-2.svg"),
         url("./images/background-retangulo-3.svg");
-    background-repeat: repeat-x, repeat-x, repeat-x;
+    background-position-y: -20vw, -40vw, 80vh;
+    background-repeat: no-repeat, no-repeat, no-repeat;
     background-size: contain, cover, contain;
-    background-position-y: -25vh, -35vh, 80vh;
 
     .card__profile {
         display: flex;
@@ -315,7 +315,7 @@ header {
 
     .icon--cinerama {
         display: block;
-        background: url('../sass/images/cinema.png');
+        background: url("../sass/images/cinema.png");
         width: 160px;
         height: 160px;
         background-size: cover;
