@@ -60,7 +60,7 @@ input:focus {
 }
 
 header {
-    background-color: var(--primary);
+    background-color: #2F80ED;
 
     .inner-content {
         display: flex;
@@ -330,33 +330,9 @@ header {
 
     h2 {
         font-size: 35px;
-        color: #f7f7f7;
+        color: #2F80ED;
         padding: 15px 0;
         font-weight: 700;
-    }
-
-    .alternative {
-        position: relative;
-
-        h2:before {
-            position: absolute;
-            content: "";
-            height: 2px;
-            width: 55px;
-            bottom: 50%;
-            left: 186px;
-            background: #fff;
-        }
-
-        h2:after {
-            position: absolute;
-            content: "";
-            height: 2px;
-            width: 55px;
-            bottom: 50%;
-            right: 186px;
-            background: #fff;
-        }
     }
 
     .card__form {
@@ -370,7 +346,7 @@ header {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #fff;
+            color: #2F80ED;
             font-size: 16px;
             font-weight: 400;
             margin-bottom: 3px;
@@ -381,9 +357,11 @@ header {
     input {
         outline: none;
         padding: 10px 30px;
-        border: 1px;
+        border: 1px solid #2F80ED;;
         border-radius: 5px;
         margin-bottom: 15px;
+        background: transparent;
+
 
         &::placeholder {
             font-size: 13px;
@@ -393,32 +371,38 @@ header {
     }
 
     .btn {
-        background-color: #688977;
-        color: #fff;
+        color: white;
+        background-color: #97bff6;
         margin: 20px 0;
         align-self: center;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        &:hover{
+            background-color: darken( #97bff6, 15%);
+        }
     }
 
 }
 
 .card__senha {
-    margin-top: 10px;
-    background-color: #036168;
-    width: 100%;
+    margin: 20px;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 5px;
     padding: 15px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
     a {
-        color: white;
-        font-size: 17px;
+        color: #2F80ED;
+        font-size: 14px;
+        font-weight: 600;
     }
 
     .criar__conta {
-        font-size: 17px;
-        color: #f7f7f7;
+        font-size: 14px;
+        color: #2F80ED;
     }
 }
 
@@ -431,10 +415,39 @@ header {
     .movie-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .main__card{
+        background-position-y: -252px, -424px, 129%;
+        form{
+            background-color: white;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            .btn{
+                width: 100%;
+            }
+        }
+    }
+
+    .card__senha{
+        width: 38%;
+    }
 }
+
+
+
 
 @media (min-width: 992px) {
     .movie-grid {
         grid-template-columns: repeat(5, 1fr);
+    }
+
+    .main__card{
+        background-size: cover, cover, contain;
+        background-position-y: -449px, -800px, 451%;
+    }
+
+    .card__senha{
+        width: 22%;
     }
 }

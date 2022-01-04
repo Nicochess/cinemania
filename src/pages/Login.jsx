@@ -30,11 +30,9 @@ const Login = () => {
         <section className="card__profile">
           <h1>Cinemania</h1>
           <div className="icon--cinerama"></div>
-          <div className="alternative">
-            <h2>Faça Login</h2>
-            {error}
-          </div>
           <form className="card__form" onSubmit={handleSubmit}>
+            <h2>Login</h2>
+            {error}
             <label htmlFor="email">E-mail</label>
             <input
               type="email"
