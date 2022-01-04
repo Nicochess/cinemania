@@ -340,6 +340,10 @@ header {
         flex-direction: column;
         align-items: flex-start;
         align-content: flex-start;
+        background-color: white;
+        border-radius: 5px;
+        padding: 30px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
         label {
             display: flex;
@@ -357,7 +361,8 @@ header {
     input {
         outline: none;
         padding: 10px 30px;
-        border: 1px solid #2F80ED;;
+        border: 1px solid #2F80ED;
+        ;
         border-radius: 5px;
         margin-bottom: 15px;
         background: transparent;
@@ -376,8 +381,9 @@ header {
         margin: 20px 0;
         align-self: center;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        &:hover{
-            background-color: darken( #97bff6, 15%);
+
+        &:hover {
+            background-color: darken(#97bff6, 15%);
         }
     }
 
@@ -385,7 +391,7 @@ header {
 
 .card__senha {
     margin: 20px;
-    width: 70%;
+    width: 69%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -416,20 +422,22 @@ header {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .main__card{
+    .main__card {
         background-position-y: -252px, -424px, 129%;
-        form{
+
+        form {
             background-color: white;
             border-radius: 5px;
             padding: 30px;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-            .btn{
+
+            .btn {
                 width: 100%;
             }
         }
     }
 
-    .card__senha{
+    .card__senha {
         width: 38%;
     }
 }
@@ -442,12 +450,12 @@ header {
         grid-template-columns: repeat(5, 1fr);
     }
 
-    .main__card{
+    .main__card {
         background-size: cover, cover, contain;
         background-position-y: -449px, -800px, 451%;
     }
 
-    .card__senha{
+    .card__senha {
         width: 22%;
     }
 }
