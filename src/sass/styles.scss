@@ -5,6 +5,9 @@
     --secondary: #21d07a;
     --white: #fff;
     --black: #000000;
+    --blue-base: #2f80ed;
+    --light-blue: #97bff6;
+    --shadow--color: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 body {
@@ -35,8 +38,8 @@ button {
 
 .btn {
     padding: 10px 15px;
-    background-color: var(--secondary);
-    color: var(--primary);
+    background-color: var(--white);
+    color: var(--black);
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: 700;
@@ -61,7 +64,7 @@ input:focus {
 }
 
 header {
-    background-color: #2f80ed;
+    background-color: var(--blue-base);
 
     .inner-content {
         display: flex;
@@ -86,7 +89,7 @@ header {
     .brand a {
         font-weight: 700;
         font-size: 1.5rem;
-        margin-top: 10px;
+        margin: 10px 0 0 10px;
     }
 
     .brand {
@@ -96,9 +99,9 @@ header {
 
         .logo__header {
             display: block;
-            background: url("./images/homepage-icon.webp");
-            width: 76px;
-            height: 78px;
+            background: url("./images/cinema.png");
+            width: 73px;
+            height: 67px;
             background-size: cover;
         }
     }
@@ -202,12 +205,12 @@ header {
 
     .count-pill {
         display: block;
-        background-color: var(--secondary);
+        background-color: #48a9a6;
         padding: 5px 15px;
         font-size: 1.125rem;
         font-weight: 600;
-        border-radius: 999px;
-        color: var(--primary);
+        border-radius: 20px;
+        color: #ecf8f1;
     }
 
     .heading {
@@ -239,7 +242,7 @@ header {
 
     &:hover {
         .overlay {
-            border: 3px solid var(--secondary);
+            border: 3px solid #b57bff;
         }
 
         .inner-card-controls {
@@ -293,7 +296,7 @@ header {
         align-items: center;
         height: 7%;
         background: var(--black);
-        color: white;
+        color: var(--white);
         font-size: 11px;
         font-weight: 600;
         width: 100%;
@@ -350,7 +353,7 @@ header {
 
     h2 {
         font-size: 34px;
-        color: #2f80ed;
+        color: var(--blue-base);
         padding: 15px 0;
         font-weight: 700;
     }
@@ -363,11 +366,11 @@ header {
         max-width: 310px;
         padding: 30px;
         border-radius: 5px;
-        background-color: white;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        background-color: var(--white);
+        box-shadow: var(--shadow--color);
 
         label {
-            color: #2f80ed;
+            color: var(--blue-base);
             font-size: 14px;
             font-weight: 400;
             margin-bottom: 3px;
@@ -378,7 +381,7 @@ header {
         width: 100%;
         outline: none;
         padding: 10px;
-        border: 1px solid #2f80ed;
+        border: 1px solid var(--blue-base);
         border-radius: 5px;
         margin-bottom: 15px;
         background: transparent;
@@ -392,8 +395,8 @@ header {
     .btn {
         width: 100%;
         font-size: 14px;
-        color: white;
-        background-color: #97bff6;
+        color: var(--white);
+        background-color: var(--light-blue);
         margin: 10px 0;
         align-self: center;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -413,12 +416,12 @@ header {
     align-items: center;
     border-radius: 5px;
     padding: 15px;
-    background-color: white;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: var(--white);
+    box-shadow: var(--shadow--color);
 
     a,
     .criar__conta {
-        color: #2f80ed;
+        color: var(--blue-base);
         font-size: 14px;
     }
 
