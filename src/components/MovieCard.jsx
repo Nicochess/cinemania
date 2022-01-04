@@ -7,6 +7,7 @@ const MovieCard = ({ movie, type }) => {
       <div className="overlay"></div>
 
       <img
+      className={type=== 'watched' ? 'img-watched' : 'img-watchlist'}
         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
         alt={movie.title}
       />
