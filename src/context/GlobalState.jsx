@@ -24,7 +24,7 @@ export const GlobalProvider = ({ children }) => {
 
   const addToWatchlist = (movie) => {
     setWatchlist((prevMovies) => {
-      const newState = [...prevMovies, movie];
+      const newState = [movie, ...prevMovies];
       updateDocs(newState);
       return newState;
     });
@@ -41,7 +41,7 @@ export const GlobalProvider = ({ children }) => {
   const addToWatched = (movie) => {
     removeToWatchlist(movie.id);
     setWatched((prevMovies) => {
-      const newState = [...prevMovies, movie];
+      const newState = [movie, ...prevMovies];
       updateWatched(newState);
       return newState;
     });
