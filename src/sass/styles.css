@@ -1,14 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
-:root {
-  --primary: #032541;
-  --secondary: #21d07a;
-  --white: #fff;
-  --black: #000000;
-  --blue-base: #2f80ed;
-  --light-blue: #97bff6;
-  --shadow--color: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
 body {
   font-family: "Source Sans Pro", sans-serif;
   padding: 0;
@@ -38,8 +28,8 @@ button {
 
 .btn {
   padding: 10px 15px;
-  background-color: var(--secondary);
-  color: var(--black);
+  background-color: #21d07a;
+  color: #000;
   border-radius: 5px;
   text-transform: uppercase;
   font-weight: 700;
@@ -51,7 +41,7 @@ button {
 }
 
 .button {
-  background-color: var(--white);
+  background-color: #fff;
 }
 
 .btn:hover {
@@ -69,7 +59,7 @@ input:focus {
 }
 
 header {
-  background-color: var(--blue-base);
+  background-color: #2f80ed;
 }
 
 header .inner-content {
@@ -89,7 +79,7 @@ header .inner-content {
 }
 
 header a {
-  color: var(--white);
+  color: #fff;
   font-size: 1.25rem;
   text-decoration: none;
   -webkit-transition: all 0.3s ease;
@@ -161,11 +151,11 @@ header .nav-links li {
 
 .add-content .input-wrapper input {
   width: 100%;
-  background-color: var(--primary);
+  background-color: #032541;
   padding: 10px;
   border-radius: 5px;
   border: none;
-  color: var(--white);
+  color: #fff;
   font-size: 1.25rem;
 }
 
@@ -217,14 +207,14 @@ header .nav-links li {
   -webkit-line-clamp: 2;
   overflow: hidden;
   font-size: 1.25rem;
-  color: var(--primary);
+  color: #032541;
   font-weight: 600;
 }
 
 .result-card .info .release-date {
   font-size: 1.25rem;
   font-weight: 300;
-  color: var(--primary);
+  color: #032541;
 }
 
 .result-card .controls {
@@ -271,7 +261,7 @@ header .nav-links li {
 
 .movie-page .heading {
   font-size: 28px;
-  color: var(--primary);
+  color: #032541;
 }
 
 .movie-page .no-movies {
@@ -363,8 +353,8 @@ header .nav-links li {
       -ms-flex-align: center;
           align-items: center;
   height: 7%;
-  background: var(--black);
-  color: var(--white);
+  background: #000;
+  color: #fff;
   font-size: 11px;
   font-weight: 600;
   width: 100%;
@@ -386,7 +376,7 @@ header .nav-links li {
 }
 
 .ctrl-btn:hover {
-  color: var(--secondary);
+  color: #21d07a;
 }
 
 .main__card {
@@ -427,7 +417,7 @@ header .nav-links li {
   border-radius: 5px;
 }
 
-.main__card .icon--cinerama {
+.main__card .icon-cinerama {
   display: block;
   background: url("../sass/images/cinema.png");
   width: 160px;
@@ -437,7 +427,7 @@ header .nav-links li {
 
 .main__card h2 {
   font-size: 34px;
-  color: var(--blue-base);
+  color: #2f80ed;
   padding: 15px 0;
   font-weight: 700;
 }
@@ -457,13 +447,13 @@ header .nav-links li {
   max-width: 310px;
   padding: 30px;
   border-radius: 5px;
-  background-color: var(--white);
-  -webkit-box-shadow: var(--shadow--color);
-          box-shadow: var(--shadow--color);
+  background-color: #fff;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .main__card .card__form label {
-  color: var(--blue-base);
+  color: #2f80ed;
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 3px;
@@ -473,7 +463,7 @@ header .nav-links li {
   width: 100%;
   outline: none;
   padding: 10px;
-  border: 1px solid var(--blue-base);
+  border: 1px solid #2f80ed;
   border-radius: 5px;
   margin-bottom: 15px;
   background: transparent;
@@ -502,8 +492,8 @@ header .nav-links li {
 .main__card .btn {
   width: 100%;
   font-size: 14px;
-  color: var(--white);
-  background-color: var(--light-blue);
+  color: #fff;
+  background-color: #97bff6;
   margin: 10px 0;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -532,14 +522,14 @@ header .nav-links li {
           align-items: center;
   border-radius: 5px;
   padding: 15px;
-  background-color: var(--white);
-  -webkit-box-shadow: var(--shadow--color);
-          box-shadow: var(--shadow--color);
+  background-color: #fff;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .card__senha a,
 .card__senha .criar__conta {
-  color: var(--blue-base);
+  color: #2f80ed;
   font-size: 14px;
 }
 

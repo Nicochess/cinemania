@@ -1,17 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
-
-:root {
-    --primary: #032541;
-    --secondary: #21d07a;
-    --white: #fff;
-    --black: #000000;
-    --blue-base: #2f80ed;
-    --light-blue: #97bff6;
-    --shadow--color: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
+@import 'variables';
 
 body {
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: $font-stack;
     padding: 0;
     margin: 0;
 }
@@ -38,8 +28,8 @@ button {
 
 .btn {
     padding: 10px 15px;
-    background-color: var(--secondary);
-    color: var(--black);
+    background-color: $secondary;
+    color: #000;
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: 700;
@@ -50,7 +40,7 @@ button {
 }
 
 .button{
-    background-color: var(--white);
+    background-color: #fff;
 }
 
 .btn:hover {
@@ -68,7 +58,7 @@ input:focus {
 }
 
 header {
-    background-color: var(--blue-base);
+    background-color: $blue-base;
 
     .inner-content {
         display: flex;
@@ -80,7 +70,7 @@ header {
     }
 
     a {
-        color: var(--white);
+        color: #fff;
         font-size: 1.25rem;
         text-decoration: none;
         transition: all 0.3s ease;
@@ -133,11 +123,11 @@ header {
 
     .input-wrapper input {
         width: 100%;
-        background-color: var(--primary);
+        background-color: $primary;
         padding: 10px;
         border-radius: 5px;
         border: none;
-        color: var(--white);
+        color: #fff;
         font-size: 1.25rem;
     }
 
@@ -180,14 +170,14 @@ header {
             -webkit-line-clamp: 2;
             overflow: hidden;
             font-size: 1.25rem;
-            color: var(--primary);
+            color: $primary;
             font-weight: 600;
         }
 
         .release-date {
             font-size: 1.25rem;
             font-weight: 300;
-            color: var(--primary);
+            color: $primary;
         }
     }
 
@@ -226,7 +216,7 @@ header {
 
     .heading {
         font-size: 28px;
-        color: var(--primary);
+        color: $primary;
     }
 
     .no-movies {
@@ -306,8 +296,8 @@ header {
         justify-content: center;
         align-items: center;
         height: 7%;
-        background: var(--black);
-        color: var(--white);
+        background: #000;
+        color: #fff;
         font-size: 11px;
         font-weight: 600;
         width: 100%;
@@ -328,7 +318,7 @@ header {
     padding: 5px;
 
     &:hover {
-        color: var(--secondary);
+        color: $secondary;
     }
 }
 
@@ -354,7 +344,7 @@ header {
         border-radius: 5px;
     }
 
-    .icon--cinerama {
+    .icon-cinerama {
         display: block;
         background: url("../sass/images/cinema.png");
         width: 160px;
@@ -364,7 +354,7 @@ header {
 
     h2 {
         font-size: 34px;
-        color: var(--blue-base);
+        color: $blue-base;
         padding: 15px 0;
         font-weight: 700;
     }
@@ -377,11 +367,11 @@ header {
         max-width: 310px;
         padding: 30px;
         border-radius: 5px;
-        background-color: var(--white);
-        box-shadow: var(--shadow--color);
+        background-color: #fff;
+        box-shadow: $shadow;
 
         label {
-            color: var(--blue-base);
+            color: $blue-base;
             font-size: 14px;
             font-weight: 400;
             margin-bottom: 3px;
@@ -392,7 +382,7 @@ header {
         width: 100%;
         outline: none;
         padding: 10px;
-        border: 1px solid var(--blue-base);
+        border: 1px solid $blue-base;
         border-radius: 5px;
         margin-bottom: 15px;
         background: transparent;
@@ -406,14 +396,14 @@ header {
     .btn {
         width: 100%;
         font-size: 14px;
-        color: var(--white);
-        background-color: var(--light-blue);
+        color: #fff;
+        background-color: $light-blue;
         margin: 10px 0;
         align-self: center;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        box-shadow: $shadow;
 
         &:hover {
-            background-color: darken(#97bff6, 15%);
+            background-color: darken($light-blue, 15%);
         }
     }
 }
@@ -427,12 +417,12 @@ header {
     align-items: center;
     border-radius: 5px;
     padding: 15px;
-    background-color: var(--white);
-    box-shadow: var(--shadow--color);
+    background-color: #fff;
+    box-shadow: $shadow;
 
     a,
     .criar__conta {
-        color: var(--blue-base);
+        color: $blue-base;
         font-size: 14px;
     }
 

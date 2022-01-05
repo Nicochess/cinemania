@@ -28,7 +28,7 @@ const Login = () => {
   return (
       <main className="main__card">
         <section className="card__profile">
-          <div className="icon--cinerama"></div>
+          <div className="icon-cinerama"></div>
           <form className="card__form" onSubmit={handleSubmit}>
             <h2>Login</h2>
             {error}

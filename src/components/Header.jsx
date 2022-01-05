@@ -4,23 +4,23 @@ import AuthContext from "../context/AuthProvider";
 
 const Header = () => {
   const { logOut } = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     try {
       logOut();
-      navigate('/')
+      navigate("/");
     } catch {
-      console.log('Error')
+      alert("Error");
     }
-  }
+  };
 
   return (
     <header>
       <div className="container">
         <div className="inner-content">
           <div className="brand">
-        <div className="logo__header"></div>
+            <div className="logo__header" />
             <Link to="/watch">Cinemania</Link>
           </div>
           <ul className="nav-links">

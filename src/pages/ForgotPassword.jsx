@@ -26,7 +26,7 @@ const ForgotPassword = () => {
 
   return (
     <main className="main__card">
-      <div className="icon--cinerama"></div>
+      <div className="icon-cinerama"></div>
       <form className="card__form" onSubmit={handleSubmit}>
         <h2>Recuperação</h2>
         {error}
