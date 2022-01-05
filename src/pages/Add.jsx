@@ -5,33 +5,55 @@ const Add = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [index, setIndex] = useState(1);
+  const [showButton, setShowButton] = useState(true);
+
+  const fetchTopRate = async (index = 1) => {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_KEY}&language=pt-BR&page=${index}`
+    );
+    const data = await res.json();
+    if (data.total_results === results.length) {
+      setShowButton(false);
+    }
+    return data;
+  };
+
+  const fetchQuery = async (query, index = 1) => {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_KEY}&language=pt-BR&page=${index}&include_adult=false&query=${query}`
+    );
+    const data = await res.json();
+
+    data.total_results <= results.length
+      ? setShowButton(false)
+      : setShowButton(true);
+
+    return data;
+  };
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      const res = await fetch(
-        `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_KEY}&language=pt-BR&page=1`
-      );
-      const data = await res.json();
+    const getTopRate = async () => {
+      const data = await fetchTopRate();
       if (data) {
         setResults(data.results);
+      } else {
+        setResults([]);
+        setIndex(1);
       }
     };
-    fetchMovies();
+
+    getTopRate();
   }, []);
 
   const handleChange = async (e) => {
     e.preventDefault();
     setQuery(e.target.value);
-    const res = await fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_KEY}&language=pt-BR&page=1&include_adult=false&query=${e.target.value}`
-    );
-    const data = await res.json();
 
-    if (!data.errors) {
+    if (e.target.value) {
+      const data = await fetchQuery(e.target.value);
       setResults(data.results);
     } else {
-      setResults([]);
-      setIndex(1);
+      fetchTopRate();
     }
   };
 
@@ -41,24 +63,11 @@ const Add = () => {
     });
 
     if (!query) {
-      const res = await fetch(
-        `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_KEY}&language=pt-BR&page=${index + 1}`
-      );
-      const data = await res.json();
-      console.log("all");
-      setResults((prev) => {
-        return [...prev, ...data.results];
-      });
+      const data = await fetchTopRate(index + 1);
+      data ? setResults((prev) => [...prev, ...data.results]) : setIndex(1);
     } else {
-      const res = await fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=${
-          process.env.REACT_APP_KEY
-        }&language=pt-BR&page=${index + 1}&include_adult=false&query=${query}`
-      );
-      const data = await res.json();
-      setResults((prev) => {
-        return [...prev, ...data.results];
-      });
+      const data = await fetchQuery(query, index + 1);
+      data ? setResults((prev) => [...prev, ...data.results]) : setIndex(1);
     }
   };
 
@@ -86,9 +95,11 @@ const Add = () => {
                   );
                 })}
               </ul>
-              <button className="btn" onClick={loadMore}>
-                Ver Mais
-              </button>
+              {showButton && (
+                <button className="btn" onClick={loadMore}>
+                  Ver Mais
+                </button>
+              )}
             </>
           )}
         </div>
