@@ -6,6 +6,19 @@ const Add = () => {
   const [results, setResults] = useState([]);
   const [index, setIndex] = useState(1);
 
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const res = await fetch(
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_KEY}&language=pt-BR&page=1`
+      );
+      const data = await res.json();
+      if (data) {
+        setResults(data.results);
+      }
+    };
+    fetchMovies();
+  }, []);
+
   const handleChange = async (e) => {
     e.preventDefault();
     setQuery(e.target.value);
@@ -27,15 +40,26 @@ const Add = () => {
       return prev + 1;
     });
 
-    const res = await fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${
-        process.env.REACT_APP_KEY
-      }&language=pt-BR&page=${index + 1}&include_adult=false&query=${query}`
-    );
-    const data = await res.json();
-    setResults((prev) => {
-      return [...prev, ...data.results];
-    });
+    if (!query) {
+      const res = await fetch(
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_KEY}&language=pt-BR&page=${index + 1}`
+      );
+      const data = await res.json();
+      console.log("all");
+      setResults((prev) => {
+        return [...prev, ...data.results];
+      });
+    } else {
+      const res = await fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=${
+          process.env.REACT_APP_KEY
+        }&language=pt-BR&page=${index + 1}&include_adult=false&query=${query}`
+      );
+      const data = await res.json();
+      setResults((prev) => {
+        return [...prev, ...data.results];
+      });
+    }
   };
 
   return (

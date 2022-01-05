@@ -22,7 +22,7 @@ const Register = () => {
       setError("");
       setLoading(true);
       register(emailRef.current.value, passwordRef.current.value).then(() => {
-        navigate("/watch");
+        navigate("/add");
       })
     } catch {
       setError("Não conseguimos criar sua conta :(");

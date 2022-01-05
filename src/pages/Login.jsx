@@ -17,7 +17,7 @@ const Login = () => {
       setError("");
       setLoading(true);
       login(emailRef.current.value, passwordRef.current.value).then(() => {
-        navigate("/watch"); 
+        navigate("/add"); 
       })
     } catch {
       setError("Não conseguimos foi possível logar");
