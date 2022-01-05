@@ -12,6 +12,7 @@ const Add = () => {
       `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_KEY}&language=pt-BR&page=${index}`
     );
     const data = await res.json();
+
     if (data.total_results === results.length) {
       setShowButton(false);
     }
@@ -43,17 +44,18 @@ const Add = () => {
     };
 
     getTopRate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleChange = async (e) => {
     e.preventDefault();
     setQuery(e.target.value);
-
-    if (e.target.value) {
+    if (e.target.value.length !== 0) {
       const data = await fetchQuery(e.target.value);
       setResults(data.results);
     } else {
-      fetchTopRate();
+      const data = await fetchTopRate();
+      setResults(data.results);
     }
   };
 

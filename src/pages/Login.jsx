@@ -45,6 +45,7 @@ const Login = () => {
               type="password"
               id="password"
               ref={passwordRef}
+              autoComplete='on'
               required
               placeholder="Insira sua senha"
             />

@@ -1,8 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import AuthContext from "./AuthProvider";
 
-// initial state
-const globalState = {
+const GlobalContext = createContext({
   watchlist: localStorage.getItem("watchlist") || [],
   watched: localStorage.getItem("watched") || [],
   addToWatchlist: (movie) => {},
@@ -11,12 +10,9 @@ const globalState = {
   removeToWatched: (id) => {},
   moveToWatchlist: (movie) => {},
   setWatchlist: (data) => {},
-};
+});
 
-//creating context
-const GlobalContext = createContext(globalState);
 
-//provider components
 export const GlobalProvider = ({ children }) => {
   const [watchlist, setWatchlist] = useState([]);
   const [watched, setWatched] = useState([]);

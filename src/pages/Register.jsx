@@ -51,6 +51,7 @@ const Register = () => {
             type="password"
             id="password"
             ref={passwordRef}
+            autoComplete="on"
             required
             placeholder="Insira sua senha"
           />
@@ -59,6 +60,7 @@ const Register = () => {
             type="password"
             id="password-confirm"
             ref={passwordConfirmRef}
+            autoComplete="on"
             required
             placeholder="Repita sua senha"
           />
