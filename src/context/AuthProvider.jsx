@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { auth, db } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext({
   currentUser: "",
@@ -19,6 +20,7 @@ export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState();
   const userId = currentUser && currentUser.uid;
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   const register = (email, password) => {
     return auth.createUserWithEmailAndPassword(email, password);
@@ -72,10 +74,12 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
+      navigate("/add");
       setLoading(false);
     });
 
     return unsubscribe;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const context = {

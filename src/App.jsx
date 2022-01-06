@@ -14,9 +14,9 @@ import { AuthProvider } from "./context/AuthProvider";
 
 function App() {
   return (
-    <AuthProvider>
-      <GlobalProvider>
-        <Router basename="/">
+    <Router basename="/">
+      <AuthProvider>
+        <GlobalProvider>
           <Routes>
             <Route element={<MainNavigate />}>
               <Route element={<PrivateRoute />}>
@@ -29,9 +29,9 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/forgot" element={<ForgotPassword />} />
           </Routes>
-        </Router>
-      </GlobalProvider>
-    </AuthProvider>
+        </GlobalProvider>
+      </AuthProvider>
+    </Router>
   );
 }
 
