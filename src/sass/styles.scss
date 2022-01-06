@@ -34,7 +34,7 @@ button {
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
-    font-size: 1rem;
+    font-size: 14px;
     transition: all 0.3s ease;
     line-height: 1.1;
 }
@@ -134,7 +134,7 @@ header {
     max-width: 600px;
     margin: 0 auto;
 
-    .input-wrapper input {
+    .add-field {
         width: 100%;
         background-color: $primary;
         padding: 10px;
@@ -147,6 +147,12 @@ header {
     .btn {
         margin: 0 auto;
     }
+}
+
+.filters-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 10px;
 }
 
 .results {

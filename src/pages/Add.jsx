@@ -2,10 +2,15 @@ import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 
 const Add = () => {
-  const [query, setQuery] = useState("");
+  const [genres, setGenres] = useState([]);
   const [results, setResults] = useState([]);
+  const [query, setQuery] = useState("");
+  const [choosedGenre, setChoosedGenre] = useState("all");
   const [index, setIndex] = useState(1);
   const [showButton, setShowButton] = useState(true);
+
+  const [genreFiltering, setGenreFiltering] = useState(false);
+  const [searching, setSearching] = useState(true);
 
   const fetchTopRate = async (index = 1) => {
     const res = await fetch(
@@ -32,7 +37,22 @@ const Add = () => {
     return data;
   };
 
+  const fetchDiscover = async (genre, index = 1) => {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_KEY}&language=pt-BR&with_genres=${genre}&page=${index}`
+    );
+    const data = await res.json();
+    return data;
+  };
+
   useEffect(() => {
+    const getGenres = async () => {
+      const res = await fetch(
+        `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_KEY}&language=pt-BR`
+      );
+      const data = await res.json();
+      setGenres(data.genres);
+    };
     const getTopRate = async () => {
       const data = await fetchTopRate();
       if (data) {
@@ -44,8 +64,20 @@ const Add = () => {
     };
 
     getTopRate();
+    getGenres();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const selectChange = async (e) => {
+    if (e.target.value !== "all") {
+      setChoosedGenre(e.target.value);
+      const data = await fetchDiscover(e.target.value);
+      setResults(data.results);
+    } else {
+      const data = await fetchTopRate();
+      setResults(data.results);
+    }
+  };
 
   const handleChange = async (e) => {
     e.preventDefault();
@@ -60,30 +92,70 @@ const Add = () => {
   };
 
   const loadMore = async () => {
-    setIndex((prev) => {
-      return prev + 1;
-    });
+    setIndex((prev) => prev + 1);
 
-    if (!query) {
-      const data = await fetchTopRate(index + 1);
+    if (genreFiltering) {
+      const data = await fetchDiscover(choosedGenre, index + 1);
       data ? setResults((prev) => [...prev, ...data.results]) : setIndex(1);
     } else {
-      const data = await fetchQuery(query, index + 1);
-      data ? setResults((prev) => [...prev, ...data.results]) : setIndex(1);
+      if (!query) {
+        const data = await fetchTopRate(index + 1);
+        data ? setResults((prev) => [...prev, ...data.results]) : setIndex(1);
+      } else {
+        const data = await fetchQuery(query, index + 1);
+        data ? setResults((prev) => [...prev, ...data.results]) : setIndex(1);
+      }
     }
+  };
+
+  const changeButtonState = () => {
+    setGenreFiltering((prev) => !prev);
+    setSearching((prev) => !prev);
   };
 
   return (
     <div className="add-page">
       <div className="container">
         <div className="add-content">
+          <div className="filters-wrapper">
+            <button
+              disabled={searching}
+              className="btn"
+              onClick={changeButtonState}
+            >
+              Fazer busca
+            </button>
+            <button
+              disabled={genreFiltering}
+              className="btn"
+              onClick={changeButtonState}
+            >
+              Buscar por categoria
+            </button>
+          </div>
+
           <div className="input-wrapper">
-            <input
-              type="text"
-              placeholder="Busque por um filme! :D"
-              onChange={handleChange}
-              value={query}
-            />
+            {searching && (
+              <input
+                type="text"
+                className='add-field'
+                placeholder="Busque por um filme! :D"
+                onChange={handleChange}
+                value={query}
+              />
+            )}
+            {genreFiltering && (
+              <select onChange={selectChange} className='add-field'>
+                <option value="all">Todos</option>;
+                {genres.map(({ id, name }) => {
+                  return (
+                    <option value={id} key={id}>
+                      {name}
+                    </option>
+                  );
+                })}
+              </select>
+            )}
           </div>
 
           {results.length > 0 && (
