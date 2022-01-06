@@ -169,8 +169,7 @@ header {
 
     .poster-wrapper img,
     .filler-poster {
-        width: 75px;
-        height: 113px;
+        width: 105px;
         background-color: #dbdada;
         border-radius: 5px;
         margin-right: 15px;
@@ -181,7 +180,8 @@ header {
     .info {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-between;
+        width: 100%;
 
         .title {
             display: -webkit-box;
@@ -202,10 +202,12 @@ header {
 
     .controls {
         display: flex;
-        gap: 10px;
+        flex-direction: column;
+        gap: 5px;
 
         button {
             margin: 0;
+            max-width: 150px;
             font-size: 14px;
         }
     }

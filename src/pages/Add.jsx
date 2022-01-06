@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
+import InputSearch from "../components/InputSearch";
+import SelectFilter from "../components/SelectFilter";
 
 const Add = () => {
   const [genres, setGenres] = useState([]);
@@ -136,25 +138,10 @@ const Add = () => {
 
           <div className="input-wrapper">
             {searching && (
-              <input
-                type="text"
-                className='add-field'
-                placeholder="Busque por um filme! :D"
-                onChange={handleChange}
-                value={query}
-              />
+              <InputSearch query={query} handleChange={handleChange} />
             )}
             {genreFiltering && (
-              <select onChange={selectChange} className='add-field'>
-                <option value="all">Todos</option>;
-                {genres.map(({ id, name }) => {
-                  return (
-                    <option value={id} key={id}>
-                      {name}
-                    </option>
-                  );
-                })}
-              </select>
+              <SelectFilter genres={genres} selectChange={selectChange} />
             )}
           </div>
 
