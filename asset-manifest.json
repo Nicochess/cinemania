@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/personal-watch-list/static/css/main.8788a4b4.css",
-    "main.js": "/personal-watch-list/static/js/main.224611db.js",
+    "main.css": "/personal-watch-list/static/css/main.8781e522.css",
+    "main.js": "/personal-watch-list/static/js/main.e38b36fe.js",
     "static/media/fa-solid-900.svg": "/personal-watch-list/static/media/fa-solid-900.18df003f90a7f1313b98.svg",
     "static/media/fa-brands-400.svg": "/personal-watch-list/static/media/fa-brands-400.3c45c98f6f6c1b009c08.svg",
     "static/media/fa-solid-900.eot": "/personal-watch-list/static/media/fa-solid-900.7eefe04dc985dd4ad38b.eot",
@@ -21,11 +21,11 @@
     "static/media/background-retangulo-2.svg": "/personal-watch-list/static/media/background-retangulo-2.a0b8779b96ad61185a8a.svg",
     "static/media/background-retangulo-3.svg": "/personal-watch-list/static/media/background-retangulo-3.7f67c67aed0b641b475e.svg",
     "static/media/background-retangulo-1.svg": "/personal-watch-list/static/media/background-retangulo-1.52986715b2c60d046f76.svg",
-    "main.8788a4b4.css.map": "/personal-watch-list/static/css/main.8788a4b4.css.map",
-    "main.224611db.js.map": "/personal-watch-list/static/js/main.224611db.js.map"
+    "main.8781e522.css.map": "/personal-watch-list/static/css/main.8781e522.css.map",
+    "main.e38b36fe.js.map": "/personal-watch-list/static/js/main.e38b36fe.js.map"
   },
   "entrypoints": [
-    "static/css/main.8788a4b4.css",
-    "static/js/main.224611db.js"
+    "static/css/main.8781e522.css",
+    "static/js/main.e38b36fe.js"
   ]
 }
