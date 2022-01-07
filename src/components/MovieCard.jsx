@@ -8,7 +8,7 @@ const MovieCard = ({ movie, type }) => {
 
       <img
       className={type=== 'watched' ? 'img-watched' : 'img-watchlist'}
-        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
       />
 

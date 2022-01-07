@@ -31,7 +31,7 @@ const Header = () => {
               <Link to="/watched">Assistidos</Link>
             </li>
             <li>
-              <Link to="/add" className="button">
+              <Link to="/add" className="btn search-btn">
                 Procurar
               </Link>
             </li>

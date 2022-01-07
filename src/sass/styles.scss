@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 body {
     font-family: $font-stack;
@@ -13,8 +13,7 @@ button {
 
 .container {
     max-width: 1170px;
-    width: 85%;
-    padding: 0 15px;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -27,6 +26,7 @@ button {
 }
 
 .btn {
+    display: inline-flex;
     padding: 10px 15px;
     background-color: #023e8a;
     color: #f1dede;
@@ -37,33 +37,30 @@ button {
     font-size: 14px;
     transition: all 0.3s ease;
     line-height: 1.1;
-}
 
-.button{
-    background-color: #fff;
-    color: #000;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: 700;
-    display: inline-block;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    line-height: 1.1;
-    &:hover{
-        background-color: darken(#fff, 15%);
+    &.search-btn {
+        background-color: #fff;
+        color: #000;
+
+        &:hover {
+            background-color: darken(#fff, 15%);
+        }
+    }
+
+    &.btn-load {
+        margin: 30px auto 0 auto;
     }
 }
-
 
 .btn:hover {
     background-color: darken(#023e8a, 15%);
     opacity: 1;
 }
 
-.btn:disabled {
+.btn:disabled,
+.ctrl-btn:disabled {
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 input:focus {
@@ -143,10 +140,6 @@ header {
         color: #fff;
         font-size: 1.25rem;
     }
-
-    .btn {
-        margin: 0 auto;
-    }
 }
 
 .filters-wrapper {
@@ -156,6 +149,9 @@ header {
 }
 
 .results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     margin-top: 20px;
 
     li {
@@ -165,36 +161,50 @@ header {
 
 .result-card {
     display: flex;
-    margin-bottom: 20px;
+    flex-direction: column;
+    position: relative;
+
+    &:hover {
+        .overlay {
+            border: 3px solid #b57bff;
+        }
+
+        .inner-card-controls {
+            z-index: 1;
+            opacity: 1;
+        }
+    }
+
+    .poster-wrapper {
+        position: relative;
+    }
 
     .poster-wrapper img,
     .filler-poster {
-        width: 105px;
-        background-color: #dbdada;
+        width: 100%;
+        min-height: 275px;
+        object-fit: cover;
         border-radius: 5px;
-        margin-right: 15px;
         display: block;
-        color: transparent;
     }
 
     .info {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 100%;
 
         .title {
             display: -webkit-box;
             -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: 1;
             overflow: hidden;
-            font-size: 1.25rem;
+            font-size: 16px;
             color: $primary;
             font-weight: 600;
         }
 
         .release-date {
-            font-size: 1.25rem;
+            font-size: 15px;
             font-weight: 300;
             color: $primary;
         }
@@ -205,10 +215,22 @@ header {
         flex-direction: column;
         gap: 5px;
 
-        button {
+        .btn-modal {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            padding: 5px 8px;
             margin: 0;
             max-width: 150px;
             font-size: 14px;
+            gap: 5px;
         }
     }
 }
@@ -298,20 +320,6 @@ header {
         z-index: 1;
     }
 
-    .inner-card-controls {
-        display: inline-flex;
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0, 0, 0, 0.8);
-        border-radius: 5px;
-        padding: 3px;
-        opacity: 0;
-        z-index: -1;
-        transition: all 0.3s ease;
-    }
-
     .watched {
         display: flex;
         justify-content: center;
@@ -331,7 +339,23 @@ header {
     }
 }
 
+.inner-card-controls {
+    display: inline-flex;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    padding: 3px 5px;
+    gap: 10px;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
 .ctrl-btn {
+    display: inline-flex;
     color: #fefefe;
     background-color: transparent;
     transition: all 0.3s ease;

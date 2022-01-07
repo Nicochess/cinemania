@@ -157,7 +157,7 @@ const Add = () => {
                 })}
               </ul>
               {showButton && (
-                <button className="btn" onClick={loadMore}>
+                <button className="btn btn-load" onClick={loadMore}>
                   Ver Mais
                 </button>
               )}
