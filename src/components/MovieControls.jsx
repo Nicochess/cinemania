@@ -1,4 +1,9 @@
-import { PlaylistAdd, Visibility } from "@material-ui/icons";
+import {
+  PlaylistAdd,
+  Visibility,
+  Close,
+  VisibilityOff,
+} from "@material-ui/icons";
 import React, { useContext } from "react";
 import GlobalContext from "../context/GlobalState";
 
@@ -29,14 +34,14 @@ const MovieControls = ({ movie, type }) => {
             className="ctrl-btn"
             onClick={() => globalContext.addToWatched(movie)}
           >
-            <i className="fa-fw far fa-eye" />
+            <Visibility fontSize="medium" />
           </button>
 
           <button
             className="ctrl-btn"
             onClick={() => globalContext.removeToWatchlist(movie.id)}
           >
-            <i className="fa-fw fa fa-times" />
+            <Close fontSize="medium" />
           </button>
         </>
       )}
@@ -47,13 +52,13 @@ const MovieControls = ({ movie, type }) => {
             className="ctrl-btn"
             onClick={() => globalContext.moveToWatchlist(movie)}
           >
-            <i className="fa-fw far fa-eye-slash"></i>
+            <VisibilityOff fontSize="medium" />
           </button>
           <button
             className="ctrl-btn"
             onClick={() => globalContext.removeToWatched(movie.id)}
           >
-            <i className="fa-fw fa fa-times"></i>
+            <Close fontSize="medium" />
           </button>
         </>
       )}

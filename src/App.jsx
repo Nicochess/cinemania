@@ -4,7 +4,6 @@ import WatchList from "./pages/WatchList";
 import Watched from "./pages/Watched";
 import Add from "./pages/Add";
 import Login from "./pages/Login";
-import "./lib/font-awesome/css/all.min.css";
 import Register from "./pages/Register";
 import PrivateRoute from "./components/PrivateRoute";
 import ForgotPassword from "./pages/ForgotPassword";

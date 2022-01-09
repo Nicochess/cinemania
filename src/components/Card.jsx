@@ -1,7 +1,12 @@
 import { MenuBook } from "@material-ui/icons";
+import { useState } from "react";
+import Backdrop from "./Backdrop";
+import ModalCardInfo from "./ModalCardInfo";
 import MovieControls from "./MovieControls";
 
 const Card = ({ movie }) => {
+  const [showModal, setShowModal] = useState(false)
+
   return (
     <div className="result-card">
       <div className="poster-wrapper">
@@ -23,11 +28,13 @@ const Card = ({ movie }) => {
           </h4>
         </div>
         <div className="controls">
-          <button className="btn btn-modal">
+          <button className="btn btn-modal" onClick={() => setShowModal(true)}>
             <MenuBook fontSize="small" />
           </button>
         </div>
       </div>
+      {showModal && <Backdrop setShowModal={setShowModal} />}
+      {showModal && <ModalCardInfo setShowModal={setShowModal} movie={movie} />}
     </div>
   );
 };
