@@ -7,7 +7,6 @@ const WatchList = () => {
 
   return (
     <div className="movie-page">
-      <div className="container">
         <div className="header">
           <h1 className="heading">Ainda tenho que assistir</h1>
           <span className="count-pill">
@@ -23,7 +22,6 @@ const WatchList = () => {
         ) : (
           <h4 className="no-movies">Adicione algum filme</h4>
         )}
-      </div>
     </div>
   );
 };

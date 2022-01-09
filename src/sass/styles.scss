@@ -40,6 +40,7 @@ button {
     }
 
     h1 {
+        text-align: center;
         font-size: 18px;
         margin: 10px 0;
     }
@@ -47,12 +48,12 @@ button {
     .modal-content {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         padding: 0 20px 20px;
 
         p {
             display: -webkit-box;
-            -webkit-line-clamp: 6;
+            -webkit-line-clamp: 10;
             -webkit-box-orient: vertical;
             text-overflow: unset;
             overflow-y: scroll;
@@ -66,7 +67,6 @@ button {
         display: inline-flex;
         align-self: flex-end;
         padding: 5px;
-        border-radius: 20px;
         color: #fff;
         background: #971f1f;
 
@@ -300,7 +300,6 @@ header {
             position: absolute;
             top: 5px;
             right: 5px;
-            border-radius: 20px;
         }
         
         .btn {
@@ -320,7 +319,8 @@ header {
 }
 
 .movie-page {
-    padding: 30px 0;
+    width: 100%;
+    padding: 30px 20px;
 
     .header {
         display: flex;
@@ -588,18 +588,23 @@ header {
 
     header {
         display: flex;
-        padding: 0 20px;
+        justify-content: center;
+        width: 250px;
         height: 100vh;
         position: sticky;
         top: 0;
 
         .brand {
             flex-direction: column;
+            width: 100%;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #fff;
         }
 
         .inner-content {
             justify-content: flex-start;
             flex-direction: column;
+            width: 100%;
         }
 
         .nav-links {
