@@ -1,4 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 body {
   font-family: "Source Sans Pro", sans-serif;
   padding: 0;
@@ -22,12 +41,70 @@ button {
 
 .modal-info {
   position: fixed;
-  top: 30vh;
+  top: 10%;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 500px;
   z-index: 2;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   background: #fff;
+}
+
+.modal-info img {
+  width: 100%;
+}
+
+.modal-info h1 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.modal-info .modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0 20px 20px;
+}
+
+.modal-info .modal-content p {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  text-overflow: unset;
+  overflow-y: scroll;
+}
+
+.modal-info .btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 5px;
+  border-radius: 20px;
+  color: #fff;
+  background: #971f1f;
+}
+
+.modal-info .btn:hover {
+  background: #6d1616;
+}
+
+.modal-info .btn svg {
+  font-size: 20px;
 }
 
 .container {
@@ -60,6 +137,8 @@ button {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   line-height: 1.1;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .btn.search-btn {
@@ -303,6 +382,7 @@ header .nav-links li {
   position: absolute;
   top: 5px;
   right: 5px;
+  border-radius: 20px;
 }
 
 .result-card .controls .btn {
@@ -318,7 +398,7 @@ header .nav-links li {
       -ms-flex-pack: center;
           justify-content: center;
   line-height: 1;
-  padding: 5px 8px;
+  padding: 8px;
   margin: 0;
   max-width: 150px;
   font-size: 14px;

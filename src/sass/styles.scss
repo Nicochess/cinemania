@@ -1,4 +1,6 @@
+@import 'assets';
 @import "variables";
+
 
 body {
     font-family: $font-stack;
@@ -23,11 +25,59 @@ button {
 
 .modal-info {
     position: fixed;
-    top: 30vh;
+    top: 10%;
+    overflow: hidden;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 500px;
     z-index: 2;
     left: 50%;
     transform: translateX(-50%);
     background: #fff;
+
+    img {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 20px 20px;
+
+        p {
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
+            text-overflow: unset;
+            overflow-y: scroll;
+        }
+    }
+
+    .btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: inline-flex;
+        align-self: flex-end;
+        padding: 5px;
+        border-radius: 20px;
+        color: #fff;
+        background: #971f1f;
+
+        &:hover {
+            background: darken(#971f1f, 10%);
+        }
+
+        svg {
+            font-size: 20px;
+        }
+    }
 }
 
 .container {
@@ -44,7 +94,6 @@ button {
     box-sizing: border-box;
 }
 
-
 .btn {
     display: inline-flex;
     padding: 10px 15px;
@@ -57,6 +106,7 @@ button {
     font-size: 14px;
     transition: all 0.3s ease;
     line-height: 1.1;
+    box-shadow: $shadow;
 
     &.search-btn {
         background-color: #fff;
@@ -250,8 +300,9 @@ header {
             position: absolute;
             top: 5px;
             right: 5px;
+            border-radius: 20px;
         }
-
+        
         .btn {
             color: #fff;
             background-color: rgba(0, 0, 0, 0.8);
@@ -259,7 +310,7 @@ header {
             align-items: center;
             justify-content: center;
             line-height: 1;
-            padding: 5px 8px;
+            padding: 8px;
             margin: 0;
             max-width: 150px;
             font-size: 14px;
@@ -565,11 +616,11 @@ header {
             padding: 20px 0;
             flex-direction: row;
             flex-wrap: wrap;
-            .input-wrapper{
+            .input-wrapper {
                 flex: 1;
             }
         }
-        .filters-wrapper{
+        .filters-wrapper {
             justify-content: space-evenly;
             margin: 0;
         }
