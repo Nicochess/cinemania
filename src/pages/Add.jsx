@@ -117,8 +117,15 @@ const Add = () => {
 
   return (
     <div className="add-page">
-      <div className="container">
         <div className="add-content">
+        <div className="input-wrapper">
+            {searching && (
+              <InputSearch query={query} handleChange={handleChange} />
+            )}
+            {genreFiltering && (
+              <SelectFilter genres={genres} selectChange={selectChange} />
+            )}
+          </div>
           <div className="filters-wrapper">
             <button
               disabled={searching}
@@ -134,15 +141,6 @@ const Add = () => {
             >
               Buscar por categoria
             </button>
-          </div>
-
-          <div className="input-wrapper">
-            {searching && (
-              <InputSearch query={query} handleChange={handleChange} />
-            )}
-            {genreFiltering && (
-              <SelectFilter genres={genres} selectChange={selectChange} />
-            )}
           </div>
 
           {results.length > 0 && (
@@ -164,7 +162,6 @@ const Add = () => {
             </>
           )}
         </div>
-      </div>
     </div>
   );
 };

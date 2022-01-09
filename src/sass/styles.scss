@@ -25,6 +25,7 @@ button {
     box-sizing: border-box;
 }
 
+
 .btn {
     display: inline-flex;
     padding: 10px 15px;
@@ -49,6 +50,12 @@ button {
 
     &.btn-load {
         margin: 30px auto 0 auto;
+        background-color: #000;
+
+        &:hover {
+            opacity: 0.8;
+            background-color: #000;
+        }
     }
 }
 
@@ -122,6 +129,11 @@ header {
             display: inline-block;
         }
     }
+}
+
+.add-page {
+    width: 100%;
+    padding: 0 20px;
 }
 
 .add-content {
@@ -222,6 +234,8 @@ header {
         }
 
         .btn {
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.8);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -496,6 +510,54 @@ header {
 }
 
 @media (min-width: 927px) {
+    #root {
+        display: flex;
+    }
+
+    header {
+        display: flex;
+        padding: 0 20px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+
+        .brand {
+            flex-direction: column;
+        }
+
+        .inner-content {
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+
+        .nav-links {
+            flex-direction: column;
+        }
+    }
+
+    .add-page {
+        width: 100%;
+        padding: 0 40px;
+
+        .add-content {
+            max-width: unset;
+            padding: 20px 0;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .input-wrapper{
+                flex: 1;
+            }
+        }
+        .filters-wrapper{
+            justify-content: space-evenly;
+            margin: 0;
+        }
+    }
+
+    .results {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
     .movie-grid {
         grid-template-columns: repeat(5, 1fr);
     }

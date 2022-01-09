@@ -17,7 +17,6 @@ const Header = () => {
 
   return (
     <header>
-      <div className="container">
         <div className="inner-content">
           <div className="brand">
             <div className="logo__header" />
@@ -46,7 +45,6 @@ const Header = () => {
             </li>
           </ul>
         </div>
-      </div>
     </header>
   );
 };
