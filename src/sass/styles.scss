@@ -236,7 +236,7 @@ header {
 
 .results {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
     margin-top: 20px;
 
@@ -291,7 +291,7 @@ header {
         }
 
         .release-date {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 300;
             color: $primary;
         }
@@ -649,12 +649,10 @@ header {
         }
     }
 
-    .results {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
+    .results,
     .movie-grid {
-        grid-template-columns: repeat(5, 1fr);
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     }
 
     .main__card {

@@ -302,8 +302,8 @@ header .nav-links li {
 .results {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 20px;
   margin-top: 20px;
 }
@@ -372,7 +372,7 @@ header .nav-links li {
 }
 
 .result-card .info .release-date {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 300;
   color: #032541;
 }
@@ -828,13 +828,11 @@ header .nav-links li {
         -ms-flex: none;
             flex: none;
   }
-  .results {
-    -ms-grid-columns: (1fr)[5];
-        grid-template-columns: repeat(5, 1fr);
-  }
+  .results,
   .movie-grid {
-    -ms-grid-columns: (1fr)[5];
-        grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    -ms-grid-columns: (minmax(190px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
   }
   .main__card {
     background-size: cover, cover, contain;
