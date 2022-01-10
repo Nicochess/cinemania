@@ -1,6 +1,5 @@
-@import 'assets';
+@import "assets";
 @import "variables";
-
 
 body {
     font-family: $font-stack;
@@ -216,10 +215,11 @@ header {
         width: 100%;
         background-color: $primary;
         padding: 10px;
-        border-radius: 5px;
         border: none;
         color: #fff;
+        height: 44px;
         font-size: 1.25rem;
+        outline: 0;
     }
 }
 
@@ -227,6 +227,11 @@ header {
     display: flex;
     justify-content: space-between;
     margin: 0 0 10px;
+
+    .btn {
+        flex: 1;
+        border-radius: 0;
+    }
 }
 
 .results {
@@ -263,10 +268,11 @@ header {
     .poster-wrapper img,
     .filler-poster {
         width: 100%;
-        min-height: 275px;
+        min-height: 320px;
         object-fit: cover;
         border-radius: 5px;
         display: block;
+        box-shadow: $shadow;
     }
 
     .info {
@@ -290,31 +296,32 @@ header {
             color: $primary;
         }
     }
+}
 
-    .controls {
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .btn-modal {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 1;
+    }
+
+    .btn {
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.8);
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        padding: 8px;
+        margin: 0;
+        max-width: 150px;
+        font-size: 14px;
         gap: 5px;
-
-        .btn-modal {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-        }
-        
-        .btn {
-            color: #fff;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-            padding: 8px;
-            margin: 0;
-            max-width: 150px;
-            font-size: 14px;
-            gap: 5px;
-        }
     }
 }
 
@@ -371,6 +378,7 @@ header {
     &:hover {
         .overlay {
             border: 3px solid #b57bff;
+            z-index: 1;
         }
 
         .inner-card-controls {
@@ -401,7 +409,6 @@ header {
         height: 100%;
         border: 3px solid transparent;
         transition: all 0.3s ease;
-        z-index: 1;
     }
 
     .watched {
@@ -565,7 +572,6 @@ header {
 @media (min-width: 768px) {
     header .inner-content {
         flex-wrap: nowrap;
-        justify-content: space-between;
     }
 
     .movie-grid {
@@ -621,13 +627,25 @@ header {
             padding: 20px 0;
             flex-direction: row;
             flex-wrap: wrap;
+
             .input-wrapper {
                 flex: 1;
             }
+
+            .add-field {
+                border-radius: 5px 0 0 5px;
+            }
         }
+
         .filters-wrapper {
             justify-content: space-evenly;
             margin: 0;
+            border-radius: 0 5px 5px 0;
+            overflow: hidden;
+
+            .btn {
+                flex: none;
+            }
         }
     }
 

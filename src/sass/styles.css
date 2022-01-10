@@ -275,10 +275,11 @@ header .nav-links li {
   width: 100%;
   background-color: #032541;
   padding: 10px;
-  border-radius: 5px;
   border: none;
   color: #fff;
+  height: 44px;
   font-size: 1.25rem;
+  outline: 0;
 }
 
 .filters-wrapper {
@@ -289,6 +290,13 @@ header .nav-links li {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 0 0 10px;
+}
+
+.filters-wrapper .btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-radius: 0;
 }
 
 .results {
@@ -331,11 +339,13 @@ header .nav-links li {
 .result-card .poster-wrapper img,
 .result-card .filler-poster {
   width: 100%;
-  min-height: 275px;
+  min-height: 320px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
   display: block;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .result-card .info {
@@ -367,7 +377,7 @@ header .nav-links li {
   color: #032541;
 }
 
-.result-card .controls {
+.controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -378,13 +388,14 @@ header .nav-links li {
   gap: 5px;
 }
 
-.result-card .controls .btn-modal {
+.controls .btn-modal {
   position: absolute;
   top: 5px;
   right: 5px;
+  z-index: 1;
 }
 
-.result-card .controls .btn {
+.controls .btn {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8);
   display: -webkit-box;
@@ -466,6 +477,7 @@ header .nav-links li {
 
 .movie-card:hover .overlay {
   border: 3px solid #b57bff;
+  z-index: 1;
 }
 
 .movie-card:hover .inner-card-controls {
@@ -497,7 +509,6 @@ header .nav-links li {
   border: 3px solid transparent;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  z-index: 1;
 }
 
 .movie-card .watched {
@@ -725,9 +736,6 @@ header .nav-links li {
   header .inner-content {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
   .movie-grid {
     -ms-grid-columns: (1fr)[3];
@@ -804,11 +812,21 @@ header .nav-links li {
         -ms-flex: 1;
             flex: 1;
   }
+  .add-page .add-content .add-field {
+    border-radius: 5px 0 0 5px;
+  }
   .add-page .filters-wrapper {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
     margin: 0;
+    border-radius: 0 5px 5px 0;
+    overflow: hidden;
+  }
+  .add-page .filters-wrapper .btn {
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
   }
   .results {
     -ms-grid-columns: (1fr)[5];
