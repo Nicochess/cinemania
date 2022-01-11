@@ -268,7 +268,7 @@ header {
     .poster-wrapper img,
     .filler-poster {
         width: 100%;
-        min-height: 320px;
+        min-height: 278px;
         object-fit: cover;
         border-radius: 5px;
         display: block;
@@ -576,6 +576,13 @@ header {
 
     .movie-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .result-card {
+        .poster-wrapper img,
+        .filler-poster {
+            min-height: 320px;
+        }
     }
 
     .main__card {

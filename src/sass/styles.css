@@ -339,7 +339,7 @@ header .nav-links li {
 .result-card .poster-wrapper img,
 .result-card .filler-poster {
   width: 100%;
-  min-height: 320px;
+  min-height: 278px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
@@ -740,6 +740,10 @@ header .nav-links li {
   .movie-grid {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
+  }
+  .result-card .poster-wrapper img,
+  .result-card .filler-poster {
+    min-height: 320px;
   }
   .main__card {
     background-position-y: -50vh, -70vh, 80vh;
