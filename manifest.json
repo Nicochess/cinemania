@@ -4,8 +4,8 @@
     "theme_color": "#97bff6",
     "background_color": "#97bff6",
     "display": "Standalone",
-    "start_url": "./personal-watch-list/",
-    "scope": "/",
+    "start_url": "./",
+    "scope": ".",
     "icons": [
         {
             "src": "maskable.png",
