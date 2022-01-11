@@ -1,16 +1,17 @@
 {
   "files": {
     "main.css": "/personal-watch-list/static/css/main.96fe1a18.css",
-    "main.js": "/personal-watch-list/static/js/main.8f265bf3.js",
+    "main.js": "/personal-watch-list/static/js/main.dc224f47.js",
+    "service-worker.js": "/personal-watch-list/service-worker.js",
     "index.html": "/personal-watch-list/index.html",
     "static/media/background-retangulo-2.svg": "/personal-watch-list/static/media/background-retangulo-2.a0b8779b96ad61185a8a.svg",
     "static/media/background-retangulo-3.svg": "/personal-watch-list/static/media/background-retangulo-3.7f67c67aed0b641b475e.svg",
     "static/media/background-retangulo-1.svg": "/personal-watch-list/static/media/background-retangulo-1.52986715b2c60d046f76.svg",
     "main.96fe1a18.css.map": "/personal-watch-list/static/css/main.96fe1a18.css.map",
-    "main.8f265bf3.js.map": "/personal-watch-list/static/js/main.8f265bf3.js.map"
+    "main.dc224f47.js.map": "/personal-watch-list/static/js/main.dc224f47.js.map"
   },
   "entrypoints": [
     "static/css/main.96fe1a18.css",
-    "static/js/main.8f265bf3.js"
+    "static/js/main.dc224f47.js"
   ]
 }

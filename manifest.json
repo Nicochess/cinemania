@@ -1,12 +1,18 @@
 {
+    "name": "Cinemania",
+    "short_name": "Cinemania",
     "theme_color": "#97bff6",
     "background_color": "#97bff6",
-    "display": "standalone",
-    "start_url": "/",
+    "display": "Standalone",
+    "start_url": "/personal-watch-list",
     "scope": "/",
-    "name": "personal-watch-list",
-    "short_name": "Cinemania",
     "icons": [
+        {
+            "src": "maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
         {
             "src": "images/icon-192x192.png",
             "sizes": "192x192",
