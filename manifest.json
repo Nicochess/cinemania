@@ -3,7 +3,7 @@
     "background_color": "#97bff6",
     "display": "standalone",
     "start_url": "/personal-watch-list",
-    "scope": ".",
+    "scope": "/personal-watch-list",
     "name": "personal-watch-list",
     "short_name": "Cinemania",
     "icons": [
