@@ -19,7 +19,7 @@ button {
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
+    z-index: 2;
 }
 
 .modal-info {
@@ -165,16 +165,16 @@ header {
         }
     }
 
-    .brand a {
-        font-weight: 700;
-        font-size: 1.5rem;
-        margin: 10px 0 0 10px;
-    }
-
     .brand {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        a {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin: 10px 0 0;
+        }
 
         .logo__header {
             display: block;

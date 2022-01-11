@@ -117,51 +117,51 @@ const Add = () => {
 
   return (
     <div className="add-page">
-        <div className="add-content">
+      <div className="add-content">
         <div className="input-wrapper">
-            {searching && (
-              <InputSearch query={query} handleChange={handleChange} />
-            )}
-            {genreFiltering && (
-              <SelectFilter genres={genres} selectChange={selectChange} />
-            )}
-          </div>
-          <div className="filters-wrapper">
-            <button
-              disabled={searching}
-              className="btn"
-              onClick={changeButtonState}
-            >
-              Fazer busca
-            </button>
-            <button
-              disabled={genreFiltering}
-              className="btn"
-              onClick={changeButtonState}
-            >
-              Buscar por categoria
-            </button>
-          </div>
-
-          {results.length > 0 && (
-            <>
-              <ul className="results">
-                {results.map((movie) => {
-                  return (
-                    <li key={movie.id}>
-                      <Card movie={movie} />
-                    </li>
-                  );
-                })}
-              </ul>
-              {showButton && (
-                <button className="btn btn-load" onClick={loadMore}>
-                  Ver Mais
-                </button>
-              )}
-            </>
+          {searching && (
+            <InputSearch query={query} handleChange={handleChange} />
+          )}
+          {genreFiltering && (
+            <SelectFilter genres={genres} selectChange={selectChange} />
           )}
         </div>
+        <div className="filters-wrapper">
+          <button
+            disabled={searching}
+            className="btn"
+            onClick={changeButtonState}
+          >
+            Fazer busca
+          </button>
+          <button
+            disabled={genreFiltering}
+            className="btn"
+            onClick={changeButtonState}
+          >
+            Buscar por categoria
+          </button>
+        </div>
+
+        {results.length > 0 && (
+          <>
+            <ul className="results">
+              {results.map((movie) => {
+                return (
+                  <li key={movie.id}>
+                    <Card movie={movie} />
+                  </li>
+                );
+              })}
+            </ul>
+            {showButton && (
+              <button className="btn btn-load" onClick={loadMore}>
+                Ver Mais
+              </button>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 };
