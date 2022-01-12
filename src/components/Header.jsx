@@ -1,11 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {
+  Visibility,
+  Movie,
+  Search,
+  ExitToApp,
+  Menu,
+  Close,
+} from "@material-ui/icons";
 import AuthContext from "../context/AuthProvider";
 
 const Header = () => {
   const { logOut } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const [sidebar, setSideBar] = useState(true);
 
+  const navigate = useNavigate();
   const handleLogout = () => {
     try {
       logOut();
@@ -15,36 +24,49 @@ const Header = () => {
     }
   };
 
+  const showSideBar = () => {
+    setSideBar((prev) => !prev);
+  };
+
   return (
-    <header>
-        <div className="inner-content">
+    <header className={sidebar ? "active" : null}>
+      <button className="btn menu" onClick={showSideBar}>
+        {sidebar ? <Close /> : <Menu />}
+      </button>
+
+      <nav className={sidebar ? "nav-container active" : "nav-container"}>
+        <ul className={sidebar ? "nav-links active" : "nav-links"}>
           <div className="brand">
             <div className="logo__header" />
-            <Link to="/watch">Cinemania</Link>
+            Cinemania
           </div>
-          <ul className="nav-links">
-            <li>
-              <Link to="/watch">Para assistir</Link>
-            </li>
-            <li>
-              <Link to="/watched">Assistidos</Link>
-            </li>
-            <li>
-              <Link to="/add" className="btn search-btn">
-                Procurar
-              </Link>
-            </li>
-            <li>
-              <button
-                className="btn"
-                style={{ backgroundColor: "red", color: "white" }}
-                onClick={handleLogout}
-              >
-                Log Out
-              </button>
-            </li>
-          </ul>
-        </div>
+
+          <li onClick={showSideBar}>
+            <Link to="/watch">
+              <Movie />
+              Minha Lista
+            </Link>
+          </li>
+          <li onClick={showSideBar}>
+            <Link to="/watched">
+              <Visibility />
+              Assistidos
+            </Link>
+          </li>
+          <li onClick={showSideBar}>
+            <Link to="/add">
+              <Search />
+              Procurar
+            </Link>
+          </li>
+          <li onClick={showSideBar}>
+            <button className="btn" onClick={handleLogout}>
+              <ExitToApp />
+              Log Out
+            </button>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };
