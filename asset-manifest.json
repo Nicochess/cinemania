@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/cinemania/static/css/main.fefd8621.css",
-    "main.js": "/cinemania/static/js/main.661d1be5.js",
+    "main.css": "/cinemania/static/css/main.fe0a8a35.css",
+    "main.js": "/cinemania/static/js/main.930ddd72.js",
     "service-worker.js": "/cinemania/service-worker.js",
     "index.html": "/cinemania/index.html",
     "static/media/background-retangulo-2.svg": "/cinemania/static/media/background-retangulo-2.a0b8779b96ad61185a8a.svg",
     "static/media/background-retangulo-3.svg": "/cinemania/static/media/background-retangulo-3.7f67c67aed0b641b475e.svg",
     "static/media/background-retangulo-1.svg": "/cinemania/static/media/background-retangulo-1.52986715b2c60d046f76.svg",
-    "main.fefd8621.css.map": "/cinemania/static/css/main.fefd8621.css.map",
-    "main.661d1be5.js.map": "/cinemania/static/js/main.661d1be5.js.map"
+    "main.fe0a8a35.css.map": "/cinemania/static/css/main.fe0a8a35.css.map",
+    "main.930ddd72.js.map": "/cinemania/static/js/main.930ddd72.js.map"
   },
   "entrypoints": [
-    "static/css/main.fefd8621.css",
-    "static/js/main.661d1be5.js"
+    "static/css/main.fe0a8a35.css",
+    "static/js/main.930ddd72.js"
   ]
 }
