@@ -19,6 +19,7 @@
 }
 
 body {
+  background: #eee;
   font-family: "Source Sans Pro", sans-serif;
   padding: 0;
   margin: 0;
@@ -173,10 +174,9 @@ input:focus {
 }
 
 header {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  width: 100%;
+  position: fixed;
+  top: 10px;
+  right: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,11 +184,9 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 10px;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  background-color: #2f80ed;
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
   z-index: 2;
@@ -200,7 +198,9 @@ header.active {
 }
 
 header .btn.menu {
-  background: transparent;
+  position: relative;
+  background-color: #2f80ed;
+  z-index: 2;
 }
 
 header a {
@@ -240,7 +240,7 @@ header .brand .logo__header {
 
 header .nav-links {
   position: fixed;
-  top: 67px;
+  top: 0;
   right: -100%;
   width: 250px;
   background: #2f80ed;
@@ -253,14 +253,14 @@ header .nav-links {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   gap: 20px;
-  z-index: 2;
+  z-index: 1;
   -webkit-transition: 0.7s all;
   transition: 0.7s all;
 }
@@ -301,7 +301,7 @@ header .nav-links .btn {
 
 .add-page {
   width: 100%;
-  padding: 0 15px;
+  padding: 40px 15px 0;
 }
 
 .add-content {
@@ -485,11 +485,13 @@ header .nav-links .btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -836,6 +838,7 @@ header .nav-links .btn {
     width: 80px;
     padding: 10px;
     gap: 20px;
+    background-color: #2f80ed;
     -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
             box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     -webkit-transition: 0.4s all;
@@ -891,6 +894,9 @@ header .nav-links .btn {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     -webkit-transition: 0.4s all;
     transition: 0.4s all;
   }
@@ -899,7 +905,9 @@ header .nav-links .btn {
     -webkit-transition: 0.3s all;
     transition: 0.3s all;
   }
-  header .nav-links li, header .nav-links a, header .nav-links .btn {
+  header .nav-links li,
+  header .nav-links a,
+  header .nav-links .btn {
     width: 100%;
   }
   header .nav-links a {
