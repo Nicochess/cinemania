@@ -7,21 +7,21 @@ const WatchList = () => {
 
   return (
     <div className="movie-page">
-        <div className="header">
-          <h1 className="heading">Ainda tenho que assistir</h1>
-          <span className="count-pill">
-            {watchlist.length} {watchlist.length === 1 ? "Filme" : "Filmes"}
-          </span>
+      <div className="header">
+        <h1 className="heading">Ainda tenho que assistir</h1>
+        <span className="count-pill">
+          {watchlist.length} {watchlist.length === 1 ? "Filme" : "Filmes"}
+        </span>
+      </div>
+      {watchlist.length > 0 ? (
+        <div className="movie-grid">
+          {watchlist.map((item) => {
+            return <MovieCard movie={item} type="watchlist" key={item.id} />;
+          })}
         </div>
-        {watchlist.length > 0 ? (
-          <div className="movie-grid">
-            {watchlist.map((item) => {
-              return <MovieCard movie={item} type="watchlist" key={item.id} />;
-            })}
-          </div>
-        ) : (
-          <h4 className="no-movies">Adicione algum filme</h4>
-        )}
+      ) : (
+        <h4 className="no-movies">Adicione algum filme</h4>
+      )}
     </div>
   );
 };

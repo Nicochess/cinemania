@@ -7,6 +7,7 @@ import {
   ExitToApp,
   Menu,
   Close,
+  Whatshot,
 } from "@material-ui/icons";
 import AuthContext from "../context/AuthProvider";
 
@@ -42,19 +43,25 @@ const Header = () => {
           </div>
 
           <li onClick={showSideBar}>
-            <Link to="/watch" className='btn'>
+            <Link to="/watch" className="btn">
               <Movie />
               Minha Lista
             </Link>
           </li>
-          <li onClick={showSideBar} >
-            <Link to="/watched" className='btn'>
+          <li onClick={showSideBar}>
+            <Link to="/watched" className="btn">
               <Visibility />
               Assistidos
             </Link>
           </li>
           <li onClick={showSideBar}>
-            <Link to="/add" className='btn'>
+            <Link to="/upcoming" className="btn">
+              <Whatshot />
+              Lançamentos
+            </Link>
+          </li>
+          <li onClick={showSideBar}>
+            <Link to="/add" className="btn">
               <Search />
               Procurar
             </Link>

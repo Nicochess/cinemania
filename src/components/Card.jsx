@@ -21,7 +21,7 @@ const Card = ({ movie }) => {
         <MovieControls movie={movie} type="add" />
       </div>
       <div className="info">
-        <div className="header">
+        <div className="info-header">
           <h3 className="title">{movie.title}</h3>
           <h4 className="release-date">
             {movie.release_date ? movie.release_date.substring(0, 4) : "-"}

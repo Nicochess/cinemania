@@ -304,7 +304,7 @@ header .nav-links .btn {
   padding: 40px 15px 0;
 }
 
-.add-content {
+.add-page .add-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -317,7 +317,7 @@ header .nav-links .btn {
   margin: 0 auto;
 }
 
-.add-content .search-container {
+.add-page .add-content .search-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -329,11 +329,12 @@ header .nav-links .btn {
   width: 100%;
 }
 
-.add-content .add-field {
+.add-page .add-content .add-field {
   width: 100%;
   padding: 10px;
   border: none;
   color: #032541;
+  background: #fff;
   height: 47px;
   font-size: 1.25rem;
   border-radius: 5px;
@@ -342,7 +343,7 @@ header .nav-links .btn {
   outline: 0;
 }
 
-.add-content .filters-wrapper {
+.add-page .add-content .filters-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -353,7 +354,7 @@ header .nav-links .btn {
   gap: 10px;
 }
 
-.add-content .filters-wrapper .btn {
+.add-page .add-content .filters-wrapper .btn {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -400,7 +401,7 @@ header .nav-links .btn {
 .result-card .poster-wrapper img,
 .result-card .filler-poster {
   width: 100%;
-  min-height: 278px;
+  height: 290px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
@@ -477,8 +478,15 @@ header .nav-links .btn {
 }
 
 .movie-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
-  padding: 30px 20px;
+  padding: 30px 15px;
 }
 
 .movie-page .header {
@@ -526,7 +534,7 @@ header .nav-links .btn {
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  grid-gap: 30px;
+  grid-gap: 10px 20px;
 }
 
 .movie-card {
@@ -799,8 +807,9 @@ header .nav-links .btn {
 
 @media (min-width: 768px) {
   .movie-grid {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (minmax(190px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 20px 30px;
   }
   .result-card .poster-wrapper img,
   .result-card .filler-poster {
@@ -956,8 +965,7 @@ header .nav-links .btn {
         -ms-flex: none;
             flex: none;
   }
-  .results,
-  .movie-grid {
+  .results {
     width: 100%;
     -ms-grid-columns: (minmax(190px, 1fr))[auto-fill];
         grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));

@@ -10,6 +10,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import MainNavigate from "./pages/MainNavigate";
 import { GlobalProvider } from "./context/GlobalState";
 import { AuthProvider } from "./context/AuthProvider";
+import Upcoming from "./pages/Upcoming";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/watched" element={<Watched />} />
                 <Route path="/add" element={<Add />} />
                 <Route path="/watch" element={<WatchList />} />
+                <Route path="/upcoming" element={<Upcoming />} />
               </Route>
             </Route>
             <Route path="/" element={<Login />} />

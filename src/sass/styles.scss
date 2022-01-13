@@ -236,42 +236,43 @@ header {
 .add-page {
     width: 100%;
     padding: 40px 15px 0;
-}
 
-.add-content {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0 50px;
-    max-width: 600px;
-    margin: 0 auto;
-
-    .search-container {
+    .add-content {
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
-
-    .add-field {
-        width: 100%;
-        padding: 10px;
-        border: none;
-        color: $primary;
-        height: 47px;
-        font-size: 1.25rem;
-        border-radius: 5px;
-        box-shadow: $shadow;
-        outline: 0;
-    }
-
-    .filters-wrapper {
-        display: flex;
-        justify-content: space-between;
-        margin: 0 0 10px;
-        gap: 10px;
-
-        .btn {
-            flex: 1;
+        padding: 10px 0 50px;
+        max-width: 600px;
+        margin: 0 auto;
+    
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+    
+        .add-field {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            color: $primary;
+            background: #fff;
+            height: 47px;
+            font-size: 1.25rem;
+            border-radius: 5px;
+            box-shadow: $shadow;
+            outline: 0;
+        }
+    
+        .filters-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 10px;
+            gap: 10px;
+    
+            .btn {
+                flex: 1;
+            }
         }
     }
 }
@@ -311,7 +312,7 @@ header {
     .poster-wrapper img,
     .filler-poster {
         width: 100%;
-        min-height: 278px;
+        height: 290px;
         object-fit: cover;
         border-radius: 10px;
         display: block;
@@ -369,8 +370,10 @@ header {
 }
 
 .movie-page {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    padding: 30px 20px;
+    padding: 30px 15px;
 
     .header {
         display: flex;
@@ -407,7 +410,7 @@ header {
 .movie-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
+    grid-gap: 10px 20px;
 }
 
 .movie-card {
@@ -615,7 +618,8 @@ header {
 
 @media (min-width: 768px) {
     .movie-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        gap: 20px 30px;
     }
 
     .result-card {
@@ -746,8 +750,7 @@ header {
         }
     }
 
-    .results,
-    .movie-grid {
+    .results {
         width: 100%;
         grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     }
