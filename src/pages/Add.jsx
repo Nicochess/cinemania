@@ -1,3 +1,4 @@
+import { FilterList, Keyboard } from "@material-ui/icons";
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 import InputSearch from "../components/InputSearch";
@@ -118,30 +119,32 @@ const Add = () => {
   return (
     <div className="add-page">
       <div className="add-content">
-        <div className="input-wrapper">
-          {searching && (
-            <InputSearch query={query} handleChange={handleChange} />
-          )}
-          {genreFiltering && (
-            <SelectFilter genres={genres} selectChange={selectChange} />
-          )}
-        </div>
-        <div className="filters-wrapper">
-          <button
-            disabled={searching}
-            className="btn"
-            onClick={changeButtonState}
-          >
-            Fazer busca
-          </button>
-          <button
-            disabled={genreFiltering}
-            className="btn"
-            onClick={changeButtonState}
-          >
-            Buscar por categoria
-          </button>
-        </div>
+        <section className="search-container">
+          <div className="input-wrapper">
+            {searching && (
+              <InputSearch query={query} handleChange={handleChange} />
+            )}
+            {genreFiltering && (
+              <SelectFilter genres={genres} selectChange={selectChange} />
+            )}
+          </div>
+          <div className="filters-wrapper">
+            <button
+              disabled={searching}
+              className="btn"
+              onClick={changeButtonState}
+            >
+              <Keyboard />
+            </button>
+            <button
+              disabled={genreFiltering}
+              className="btn"
+              onClick={changeButtonState}
+            >
+              <FilterList />
+            </button>
+          </div>
+        </section>
 
         {results.length > 0 && (
           <>

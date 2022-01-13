@@ -42,19 +42,19 @@ const Header = () => {
           </div>
 
           <li onClick={showSideBar}>
-            <Link to="/watch">
+            <Link to="/watch" className='btn'>
               <Movie />
               Minha Lista
             </Link>
           </li>
-          <li onClick={showSideBar}>
-            <Link to="/watched">
+          <li onClick={showSideBar} >
+            <Link to="/watched" className='btn'>
               <Visibility />
               Assistidos
             </Link>
           </li>
           <li onClick={showSideBar}>
-            <Link to="/add">
+            <Link to="/add" className='btn'>
               <Search />
               Procurar
             </Link>

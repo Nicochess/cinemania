@@ -147,7 +147,8 @@ header {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    padding: 10px;
+    align-items: flex-end;
     background-color: $blue-base;
     transition: all 0.7s ease;
     z-index: 2;
@@ -158,7 +159,6 @@ header {
 
     .btn.menu {
         background: transparent;
-        box-shadow: unset;
     }
 
     a {
@@ -191,8 +191,8 @@ header {
 
     .nav-links {
         position: fixed;
-        top: 6%;
-        left: -100%;
+        top: 67px;
+        right: -100%;
         width: 250px;
         background: $blue-base;
         display: flex;
@@ -203,15 +203,16 @@ header {
         align-items: center;
         gap: 20px;
         z-index: 2;
-        transition: 0.7s all ease;
+        transition: 0.7s all;
 
         &.active {
-            left: 0;
-            transition: all 0.3s ease;
+            right: 0;
+            transition: all 0.3s;
         }
 
         li {
             width: 100%;
+            list-style: none;
         }
 
         a {
@@ -233,43 +234,51 @@ header {
 
 .add-page {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 .add-content {
     display: flex;
     flex-direction: column;
-    padding: 50px 0;
+    padding: 10px 0 50px;
     max-width: 600px;
     margin: 0 auto;
 
+    .search-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
     .add-field {
         width: 100%;
-        background-color: $primary;
         padding: 10px;
         border: none;
-        color: #fff;
-        height: 44px;
+        color: $primary;
+        height: 47px;
         font-size: 1.25rem;
+        border-radius: 5px;
+        box-shadow: $shadow;
         outline: 0;
     }
-}
 
-.filters-wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 0 10px;
+    .filters-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 10px;
+        gap: 10px;
 
-    .btn {
-        flex: 1;
-        border-radius: 0;
+        .btn {
+            flex: 1;
+        }
     }
 }
 
 .results {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
+    gap: 10px 20px;
     margin-top: 20px;
 
     li {
@@ -281,6 +290,7 @@ header {
     display: flex;
     flex-direction: column;
     position: relative;
+    gap: 5px;
 
     &:hover {
         .overlay {
@@ -302,7 +312,7 @@ header {
         width: 100%;
         min-height: 278px;
         object-fit: cover;
-        border-radius: 5px;
+        border-radius: 10px;
         display: block;
         box-shadow: $shadow;
     }
@@ -401,11 +411,12 @@ header {
 
 .movie-card {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
     position: relative;
     border: 0;
     display: block;
+    box-shadow: $shadow;
 
     &:hover {
         .overlay {
@@ -602,10 +613,6 @@ header {
 }
 
 @media (min-width: 768px) {
-    header .inner-content {
-        flex-wrap: nowrap;
-    }
-
     .movie-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -613,7 +620,7 @@ header {
     .result-card {
         .poster-wrapper img,
         .filler-poster {
-            min-height: 320px;
+            height: 320px;
         }
     }
 
@@ -632,14 +639,16 @@ header {
     }
 
     header {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 20px 0;
-        width: 60px;
-        height: 100vh;
         position: sticky;
         top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        width: 80px;
+        padding: 10px;
+        gap: 20px;
+        box-shadow: $shadow;
         transition: 0.4s all;
 
         &.active {
@@ -655,7 +664,6 @@ header {
         .brand {
             flex-direction: column;
             width: 100%;
-            padding-bottom: 15px;
             margin-bottom: 15px;
 
             a {
@@ -691,14 +699,13 @@ header {
                 transition: 0.3s all;
             }
 
-            li {
+            li, a, .btn {
                 width: 100%;
             }
 
             a {
                 display: flex;
                 align-items: center;
-                width: 100%;
                 gap: 20px;
                 padding: 10px 20px;
             }
@@ -715,20 +722,18 @@ header {
             flex-direction: row;
             flex-wrap: wrap;
 
-            .input-wrapper {
-                flex: 1;
+            .search-container {
+                flex-direction: row;
             }
 
-            .add-field {
-                border-radius: 5px 0 0 5px;
+            .input-wrapper {
+                flex: 1;
             }
         }
 
         .filters-wrapper {
             justify-content: space-evenly;
             margin: 0;
-            border-radius: 0 5px 5px 0;
-            overflow: hidden;
 
             .btn {
                 flex: none;

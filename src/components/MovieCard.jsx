@@ -8,7 +8,7 @@ const MovieCard = ({ movie, type }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="movie-card">
+    <article className="movie-card">
       <div className="overlay"></div>
 
       <img
@@ -31,7 +31,7 @@ const MovieCard = ({ movie, type }) => {
       )}
       {showModal && <Backdrop setShowModal={setShowModal} />}
       {showModal && <ModalCardInfo setShowModal={setShowModal} movie={movie} />}
-    </div>
+    </article>
   );
 };
 

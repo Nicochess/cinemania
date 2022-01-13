@@ -134,8 +134,8 @@ button {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   line-height: 1.1;
-  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .btn.search-btn {
@@ -184,9 +184,10 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  padding: 10px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   background-color: #2f80ed;
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
@@ -200,8 +201,6 @@ header.active {
 
 header .btn.menu {
   background: transparent;
-  -webkit-box-shadow: unset;
-          box-shadow: unset;
 }
 
 header a {
@@ -241,8 +240,8 @@ header .brand .logo__header {
 
 header .nav-links {
   position: fixed;
-  top: 6%;
-  left: -100%;
+  top: 67px;
+  right: -100%;
   width: 250px;
   background: #2f80ed;
   display: -webkit-box;
@@ -262,18 +261,19 @@ header .nav-links {
           align-items: center;
   gap: 20px;
   z-index: 2;
-  -webkit-transition: 0.7s all ease;
-  transition: 0.7s all ease;
+  -webkit-transition: 0.7s all;
+  transition: 0.7s all;
 }
 
 header .nav-links.active {
-  left: 0;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  right: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 header .nav-links li {
   width: 100%;
+  list-style: none;
 }
 
 header .nav-links a {
@@ -301,7 +301,7 @@ header .nav-links .btn {
 
 .add-page {
   width: 100%;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 .add-content {
@@ -312,23 +312,37 @@ header .nav-links .btn {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 50px 0;
+  padding: 10px 0 50px;
   max-width: 600px;
   margin: 0 auto;
 }
 
+.add-content .search-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
 .add-content .add-field {
   width: 100%;
-  background-color: #032541;
   padding: 10px;
   border: none;
-  color: #fff;
-  height: 44px;
+  color: #032541;
+  height: 47px;
   font-size: 1.25rem;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   outline: 0;
 }
 
-.filters-wrapper {
+.add-content .filters-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -336,13 +350,13 @@ header .nav-links .btn {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 0 0 10px;
+  gap: 10px;
 }
 
-.filters-wrapper .btn {
+.add-content .filters-wrapper .btn {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  border-radius: 0;
 }
 
 .results {
@@ -350,7 +364,7 @@ header .nav-links .btn {
   display: grid;
   -ms-grid-columns: (minmax(150px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 20px;
+  gap: 10px 20px;
   margin-top: 20px;
 }
 
@@ -367,6 +381,7 @@ header .nav-links .btn {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
+  gap: 5px;
 }
 
 .result-card:hover .overlay {
@@ -388,10 +403,10 @@ header .nav-links .btn {
   min-height: 278px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 5px;
+  border-radius: 10px;
   display: block;
-  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .result-card .info {
@@ -514,11 +529,13 @@ header .nav-links .btn {
 
 .movie-card {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
   position: relative;
   border: 0;
   display: block;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .movie-card:hover .overlay {
@@ -689,8 +706,8 @@ header .nav-links .btn {
   padding: 30px;
   border-radius: 5px;
   background-color: #fff;
-  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .main__card .card__form label {
@@ -739,8 +756,8 @@ header .nav-links .btn {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .main__card .btn:hover {
@@ -764,8 +781,8 @@ header .nav-links .btn {
   border-radius: 5px;
   padding: 15px;
   background-color: #fff;
-  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .card__senha a,
@@ -779,17 +796,13 @@ header .nav-links .btn {
 }
 
 @media (min-width: 768px) {
-  header .inner-content {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-  }
   .movie-grid {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
   }
   .result-card .poster-wrapper img,
   .result-card .filler-poster {
-    min-height: 320px;
+    height: 320px;
   }
   .main__card {
     background-position-y: -50vh, -70vh, 80vh;
@@ -806,6 +819,9 @@ header .nav-links .btn {
     display: flex;
   }
   header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -813,15 +829,15 @@ header .nav-links .btn {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    padding: 20px 0;
-    width: 60px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100vh;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+    width: 80px;
+    padding: 10px;
+    gap: 20px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     -webkit-transition: 0.4s all;
     transition: 0.4s all;
   }
@@ -840,7 +856,6 @@ header .nav-links .btn {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 100%;
-    padding-bottom: 15px;
     margin-bottom: 15px;
   }
   header .brand a {
@@ -884,7 +899,7 @@ header .nav-links .btn {
     -webkit-transition: 0.3s all;
     transition: 0.3s all;
   }
-  header .nav-links li {
+  header .nav-links li, header .nav-links a, header .nav-links .btn {
     width: 100%;
   }
   header .nav-links a {
@@ -894,7 +909,6 @@ header .nav-links .btn {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 100%;
     gap: 20px;
     padding: 10px 20px;
   }
@@ -912,21 +926,22 @@ header .nav-links .btn {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
+  .add-page .add-content .search-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
   .add-page .add-content .input-wrapper {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
-  }
-  .add-page .add-content .add-field {
-    border-radius: 5px 0 0 5px;
   }
   .add-page .filters-wrapper {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
     margin: 0;
-    border-radius: 0 5px 5px 0;
-    overflow: hidden;
   }
   .add-page .filters-wrapper .btn {
     -webkit-box-flex: 0;
