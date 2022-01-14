@@ -18,22 +18,27 @@ const Recommend = () => {
   };
 
   useEffect(() => {
-    const getUpcoming = async () => {
+    const getRecommendation = async () => {
       const moviesId = await getWatchedIdFirebase();
-      const fetchControl = index * 2;
 
-      if (startSlice <= moviesId.length) {
-        moviesId.slice(startSlice, fetchControl).map(async (id) => {
-          const data = await fetchRecommend(id);
-          setResults((prev) => [...prev, ...data.results]);
-          setStartSlice(fetchControl);
-        });
+      if (moviesId.length === 0) {
+        setResults([]);
       } else {
-        setShowButton(false);
+        const fetchControl = index * 2;
+
+        if (startSlice < moviesId.length) {
+          moviesId.slice(startSlice, fetchControl).map(async (id) => {
+            const data = await fetchRecommend(id);
+            setResults((prev) => [...prev, ...data.results]);
+            setStartSlice(fetchControl);
+          });
+        } else {
+          setShowButton(false);
+        }
       }
     };
 
-    getUpcoming();
+    getRecommendation();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
@@ -44,9 +49,9 @@ const Recommend = () => {
   return (
     <div className="movie-page">
       <div className="header">
-        <h1 className="heading">Lançamentos Recentes</h1>
+        <h1 className="heading">Recomendados para você</h1>
       </div>
-      {results.length > 0 && (
+      {results.length > 0 ? (
         <>
           <div className="movie-grid">
             {results.map((movie) => {
@@ -59,6 +64,10 @@ const Recommend = () => {
             </button>
           )}
         </>
+      ) : (
+        <h4 className="no-movies">
+          Você deve assistir algum filme para te conhecermos melhor :D
+        </h4>
       )}
     </div>
   );

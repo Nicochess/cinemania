@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }) => {
       const res = await getDoc(docRef);
       const infoDoc = res.data();
       const idWatchedMovies = infoDoc.watched.map((movie) => movie.id);
-      return idWatchedMovies.reverse()
+      return idWatchedMovies
     }
   };
 
