@@ -7,6 +7,7 @@ import {
   ExitToApp,
   Menu,
   Close,
+  Assistant,
   Whatshot,
 } from "@material-ui/icons";
 import AuthContext from "../context/AuthProvider";
@@ -41,6 +42,12 @@ const Header = () => {
             <div className="logo__header" />
             Cinemania
           </div>
+          <li onClick={showSideBar}>
+            <Link to="/recommend" className="btn">
+              <Assistant />
+              Recomendados
+            </Link>
+          </li>
           <li onClick={showSideBar}>
             <Link to="/watch" className="btn">
               <Movie />

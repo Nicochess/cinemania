@@ -11,7 +11,9 @@ const AuthContext = createContext({
   logOut: () => {},
   addDocWatch: (prevMovies, movie) => {},
   addDocWatched: (prevMovies, movie) => {},
-  getWatchedIdFirebase: () => {},
+  getWatchedIdFirebase: () => {
+    return Promise();
+  },
   setDocs: () => {},
   updateDocs: (prev, stateWatch) => {},
   updateWatched: (prev, stateWatched) => {},
@@ -45,7 +47,7 @@ export const AuthProvider = ({ children }) => {
       const res = await getDoc(docRef);
       const infoDoc = res.data();
       const idWatchedMovies = infoDoc.watched.map((movie) => movie.id);
-      return idWatchedMovies
+      return idWatchedMovies.reverse()
     }
   };
 

@@ -11,6 +11,7 @@ import MainNavigate from "./pages/MainNavigate";
 import { GlobalProvider } from "./context/GlobalState";
 import { AuthProvider } from "./context/AuthProvider";
 import Upcoming from "./pages/Upcoming";
+import Recommend from "./pages/Recommend";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/add" element={<Add />} />
                 <Route path="/watch" element={<WatchList />} />
                 <Route path="/upcoming" element={<Upcoming />} />
+                <Route path="/recommend" element={<Recommend />} />
               </Route>
             </Route>
             <Route path="/" element={<Login />} />
