@@ -41,7 +41,6 @@ const Header = () => {
             <div className="logo__header" />
             Cinemania
           </div>
-
           <li onClick={showSideBar}>
             <Link to="/watch" className="btn">
               <Movie />

@@ -11,6 +11,7 @@ const AuthContext = createContext({
   logOut: () => {},
   addDocWatch: (prevMovies, movie) => {},
   addDocWatched: (prevMovies, movie) => {},
+  getWatchedIdFirebase: () => {},
   setDocs: () => {},
   updateDocs: (prev, stateWatch) => {},
   updateWatched: (prev, stateWatched) => {},
@@ -36,6 +37,16 @@ export const AuthProvider = ({ children }) => {
 
   const logOut = () => {
     return auth.signOut();
+  };
+
+  const getWatchedIdFirebase = async () => {
+    if (currentUser) {
+      const docRef = doc(db, `users/${userId}`);
+      const res = await getDoc(docRef);
+      const infoDoc = res.data();
+      const idWatchedMovies = infoDoc.watched.map((movie) => movie.id);
+      return idWatchedMovies
+    }
   };
 
   const setDocs = async () => {
@@ -88,6 +99,7 @@ export const AuthProvider = ({ children }) => {
     login,
     forgotPassword,
     logOut,
+    getWatchedIdFirebase,
     updateDocs,
     updateWatched,
     setLoading,
