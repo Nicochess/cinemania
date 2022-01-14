@@ -25,14 +25,14 @@ const Recommend = () => {
         setResults([]);
       } else {
         const fetchControl = index * 2;
+        setStartSlice(fetchControl);
 
-        if (startSlice < moviesId.length) {
-          moviesId.slice(startSlice, fetchControl).map(async (id) => {
-            const data = await fetchRecommend(id);
-            setResults((prev) => [...prev, ...data.results]);
-            setStartSlice(fetchControl);
-          });
-        } else {
+        moviesId.slice(startSlice, fetchControl).map(async (id) => {
+          const data = await fetchRecommend(id);
+          setResults((prev) => [...prev, ...data.results]);
+        });
+
+        if (moviesId.length <= fetchControl) {
           setShowButton(false);
         }
       }
