@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/cinemania/static/css/main.33784d16.css",
-    "main.js": "/cinemania/static/js/main.d1bb4a7f.js",
+    "main.js": "/cinemania/static/js/main.3a911da0.js",
     "service-worker.js": "/cinemania/service-worker.js",
     "index.html": "/cinemania/index.html",
     "static/media/background-retangulo-2.svg": "/cinemania/static/media/background-retangulo-2.a0b8779b96ad61185a8a.svg",
     "static/media/background-retangulo-3.svg": "/cinemania/static/media/background-retangulo-3.7f67c67aed0b641b475e.svg",
     "static/media/background-retangulo-1.svg": "/cinemania/static/media/background-retangulo-1.52986715b2c60d046f76.svg",
     "main.33784d16.css.map": "/cinemania/static/css/main.33784d16.css.map",
-    "main.d1bb4a7f.js.map": "/cinemania/static/js/main.d1bb4a7f.js.map"
+    "main.3a911da0.js.map": "/cinemania/static/js/main.3a911da0.js.map"
   },
   "entrypoints": [
     "static/css/main.33784d16.css",
-    "static/js/main.d1bb4a7f.js"
+    "static/js/main.3a911da0.js"
   ]
 }
