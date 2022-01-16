@@ -5,7 +5,11 @@ import ModalCardInfo from "./ModalCardInfo";
 import MovieControls from "./MovieControls";
 
 const Card = ({ movie }) => {
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
+
+  showModal
+    ? (document.body.style.overflowY = "hidden")
+    : (document.body.style.overflowY = "scroll");
 
   return (
     <div className="result-card">

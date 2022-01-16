@@ -7,6 +7,10 @@ import MovieControls from "./MovieControls";
 const MovieCard = ({ movie, type }) => {
   const [showModal, setShowModal] = useState(false);
 
+  showModal
+    ? (document.body.style.overflowY = "hidden")
+    : (document.body.style.overflowY = "scroll");
+
   return (
     <article className="movie-card">
       <div className="overlay"></div>
