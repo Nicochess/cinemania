@@ -25,7 +25,7 @@ button {
 
 .modal-info {
     position: fixed;
-    top: 10%;
+    top: 5%;
     overflow: hidden;
     border-radius: 5px;
     width: 90%;
@@ -53,19 +53,36 @@ button {
 
         p {
             display: -webkit-box;
-            -webkit-line-clamp: 10;
+            -webkit-line-clamp: 7;
             -webkit-box-orient: vertical;
             text-overflow: unset;
             overflow-y: scroll;
         }
     }
 
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 20px 0 0;
+        gap: 10px;
+    }
+
     .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+        flex: 1;
+    }
+
+    .btn-close {
         position: absolute;
         top: 10px;
         right: 10px;
-        display: inline-flex;
         align-self: flex-end;
+        width: auto;
         padding: 5px;
         color: #fff;
         background: #971f1f;

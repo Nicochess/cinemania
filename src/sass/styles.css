@@ -42,7 +42,7 @@ button {
 
 .modal-info {
   position: fixed;
-  top: 10%;
+  top: 5%;
   overflow: hidden;
   border-radius: 5px;
   width: 90%;
@@ -80,31 +80,57 @@ button {
 
 .modal-info .modal-content p {
   display: -webkit-box;
-  -webkit-line-clamp: 10;
+  -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
   text-overflow: unset;
   overflow-y: scroll;
 }
 
+.modal-info .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  margin: 20px 0 0;
+  gap: 10px;
+}
+
 .modal-info .btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.modal-info .btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  width: auto;
   padding: 5px;
   color: #fff;
   background: #971f1f;
 }
 
-.modal-info .btn:hover {
+.modal-info .btn-close:hover {
   background: #6d1616;
 }
 
-.modal-info .btn svg {
+.modal-info .btn-close svg {
   font-size: 20px;
 }
 
