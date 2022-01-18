@@ -201,8 +201,8 @@ input:focus {
 
 header {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 0px;
+  right: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -227,6 +227,8 @@ header .btn.menu {
   position: relative;
   background-color: #2f80ed;
   z-index: 2;
+  padding: 10px 10px 15px 20px;
+  border-radius: 0 0 0 35px;
 }
 
 header a {
@@ -887,6 +889,10 @@ header .nav-links .btn {
   header.active .nav-links {
     opacity: 1;
     pointer-events: all;
+  }
+  header .btn.menu {
+    border-radius: 5px;
+    padding: 10px 15px;
   }
   header .brand {
     -webkit-box-orient: vertical;
