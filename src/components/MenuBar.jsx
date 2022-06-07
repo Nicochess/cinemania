@@ -12,9 +12,10 @@ import {
 } from "@material-ui/icons";
 import AuthContext from "../context/AuthProvider";
 
-const Header = () => {
+const MenuBar = () => {
   const { logOut } = useContext(AuthContext);
   const [sidebar, setSideBar] = useState(true);
+  const isMobile = window.innerWidth < 1024
 
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -27,15 +28,20 @@ const Header = () => {
   };
 
   const showSideBar = () => {
+    if(!isMobile) {
+      return
+    }
     setSideBar((prev) => !prev);
   };
 
   return (
     <header className={sidebar ? "active" : null}>
-      <button className="btn menu" onClick={showSideBar}>
-        {sidebar ? <Close /> : <Menu />}
-      </button>
-
+      {isMobile && (
+        <button className="btn menu" onClick={showSideBar}>
+          {sidebar ? <Close /> : <Menu />}
+        </button>
+      )}
+      
       <nav className={sidebar ? "nav-container active" : "nav-container"}>
         <ul className={sidebar ? "nav-links active" : "nav-links"}>
           <div className="brand">
@@ -84,4 +90,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default MenuBar;
