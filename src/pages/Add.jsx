@@ -11,7 +11,6 @@ const Add = () => {
   const [choosedGenre, setChoosedGenre] = useState("all");
   const [index, setIndex] = useState(1);
   const [showButton, setShowButton] = useState(true);
-
   const [genreFiltering, setGenreFiltering] = useState(false);
   const [searching, setSearching] = useState(true);
 

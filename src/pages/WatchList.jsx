@@ -15,9 +15,9 @@ const WatchList = () => {
       </div>
       {watchlist.length > 0 ? (
         <div className="movie-grid">
-          {watchlist.map((item) => {
-            return <MovieCard movie={item} type="watchlist" key={item.id} />;
-          })}
+          {watchlist.map((item) => (
+            <MovieCard movie={item} type="watchlist" key={item.id} />
+          ))}
         </div>
       ) : (
         <h4 className="no-movies">Adicione algum filme</h4>

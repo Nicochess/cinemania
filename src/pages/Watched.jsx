@@ -16,9 +16,9 @@ const Watched = () => {
       </div>
       {globalContext.watched.length > 0 ? (
         <div className="movie-grid">
-          {globalContext.watched.map((item) => {
-            return <MovieCard movie={item} type="watched" key={item.id} />;
-          })}
+          {globalContext.watched.map((item) => (
+            <MovieCard movie={item} type="watched" key={item.id} />
+          ))}
         </div>
       ) : (
         <h4 className="no-movies">Assista alguns filmes antes :D</h4>

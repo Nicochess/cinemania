@@ -1,10 +1,11 @@
 import { MenuBook } from "@material-ui/icons";
+import { memo } from "react";
 import { useState } from "react";
 import Backdrop from "./Backdrop";
 import ModalCardInfo from "./ModalCardInfo";
 import MovieControls from "./MovieControls";
 
-const Card = ({ movie }) => {
+const CardComponent = ({ movie }) => {
   const [showModal, setShowModal] = useState(false);
 
   showModal
@@ -42,5 +43,7 @@ const Card = ({ movie }) => {
     </div>
   );
 };
+
+const Card = memo(CardComponent)
 
 export default Card;

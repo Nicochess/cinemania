@@ -31,6 +31,7 @@ const MenuBar = () => {
     if(!isMobile) {
       return
     }
+    
     setSideBar((prev) => !prev);
   };
 
